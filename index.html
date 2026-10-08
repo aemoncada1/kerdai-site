@@ -568,7 +568,7 @@
           </div>
           <div style="margin-top:20px"><button type="submit" class="btn btn-primary" id="submitBtn">Send request</button></div>
           <div class="form-msg" id="formMsg" role="status"></div>
-          <div class="form-note">By sending this form you agree to be contacted by Kerdai Business Advisors about your request. We do not sell or share your information. See our <a href="#">privacy policy</a>.</div>
+          <div class="form-note">By sending this form you agree to be contacted by Kerdai Business Advisors about your request. We do not sell or share your information. See our <a href="privacy.html">privacy policy</a>.</div>
         </form>
       </div>
     </div>
@@ -608,7 +608,7 @@
     <div class="disclaimer">Kerdai Business Advisors provides business valuation, financial due diligence and transaction advisory services. We are not a law firm, a licensed CPA firm or a registered investment adviser, and nothing on this site is legal, tax or investment advice. Illustrative figures on this site are examples and do not describe any actual client or transaction.</div>
     <div class="foot-bottom">
       <span>&copy; <span id="yr">2026</span> Kerdai Business Advisors. All rights reserved.</span>
-      <span><a href="#">Privacy Policy</a></span>
+      <span><a href="privacy.html">Privacy Policy</a></span>
     </div>
   </div>
 </footer>
@@ -616,7 +616,7 @@
 <script>
 (function(){
   // Lead form: set FORM_ENDPOINT to the Apps Script /exec URL once the bridge is deployed.
-  var FORM_ENDPOINT = "";
+  var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxkbZfoI00oUbMQAdQ2PkSu0SVS3mKvbVrbOjTXlEl0_HyiBbyg__EVjNsvjGiAqKb9iA/exec";
   var PAGE_LOADED = Date.now();
 
   document.getElementById('yr').textContent = new Date().getFullYear();
