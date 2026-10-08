@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Kerdai Business Advisors</title>
+<meta name="description" content="Buy-side M&A advisory for acquirers of privately held businesses. Independent business valuations, Quality of Earnings reports, business assessments and due diligence, so you know what you are buying before you sign.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.kerdaibusinessadvisors.com/">
+<meta property="og:title" content="Know what you are buying before you sign | Kerdai Business Advisors">
+<meta property="og:description" content="Independent business valuations, Quality of Earnings reports and due diligence for buyers of privately held companies.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2710%27 fill=%27%2316223A%27/%3E%3Crect x=%274%27 y=%274%27 width=%2756%27 height=%2756%27 rx=%278%27 fill=%27none%27 stroke=%27%23D0A048%27 stroke-width=%272%27/%3E%3Ctext x=%2732%27 y=%2744%27 text-anchor=%27middle%27 font-family=%27Georgia,serif%27 font-size=%2736%27 font-weight=%27600%27 fill=%27%23E8C878%27%3EK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Kerdai Business Advisors","url":"https://www.kerdaibusinessadvisors.com/","email":"info@kerdai.com","telephone":"+1-305-501-0224","address":{"@type":"PostalAddress","streetAddress":"5201 Blue Lagoon Dr., Suite 914","addressLocality":"Miami","addressRegion":"FL","postalCode":"33126","addressCountry":"US"},"description":"Buy-side M&A advisory: independent business valuations, Quality of Earnings reports, business assessments and due diligence for acquirers of privately held companies.","areaServed":"US"}
+</script>
+<style>
+  /* Layout: centered, airy, one column of soft rounded cards on white. Navy is the only button color; gold appears in chips, checks and the logo. */
+  :root{
+    --navy:#16223A;
+    --navy-deep:#111B30;
+    --navy-ink:#0C1424;
+    --gold:#C49A3C;
+    --gold-deep:#A07830;
+    --gold-soft:#E8C878;
+    --bg:#FFFFFF;
+    --bg-2:#F7F7F9;
+    --card:#FFFFFF;
+    --ink:#141B2B;
+    --ink-soft:#4B5468;
+    --ink-mute:#7A8296;
+    --line:#E6E8EE;
+    --line-2:#D9DCE4;
+    --on-dark:#F2F4F8;
+    --on-dark-soft:#B9C2D4;
+    --on-dark-mute:#8893AA;
+    --sans:"Plus Jakarta Sans","Helvetica Neue",Arial,sans-serif;
+    --mono:"IBM Plex Mono","SFMono-Regular",Menlo,Consolas,monospace;
+    --r:20px;
+    --r-sm:12px;
+    --shadow:0 20px 50px -30px rgba(12,20,36,.25);
+    --shadow-dark:0 40px 80px -40px rgba(12,20,36,.6);
+    color-scheme:light;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:16px}
+  img{max-width:100%;display:block}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+  h1,h2,h3,h4{font-weight:600;letter-spacing:-.02em;text-wrap:balance;color:var(--navy)}
+  .wrap{max-width:1120px;margin:0 auto;padding-inline:24px}
+  .chip{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:500;color:var(--ink-soft);background:var(--bg);border:1px solid var(--line-2);border-radius:999px;padding:7px 14px 7px 12px;box-shadow:0 1px 2px rgba(12,20,36,.04)}
+  .chip::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
+  .chip.dark{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:var(--on-dark-soft)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;border:none;text-decoration:none;font-family:var(--sans);font-weight:600;font-size:.92rem;padding:13px 22px;border-radius:10px;transition:transform .25s ease,background .25s ease,box-shadow .25s ease;white-space:nowrap;line-height:1.2}
+  .btn-primary{background:var(--navy);color:#fff;box-shadow:0 10px 24px -12px rgba(22,34,58,.6)}
+  .btn-primary:hover{background:var(--navy-deep);transform:translateY(-1px)}
+  .btn-soft{background:var(--bg-2);color:var(--navy);border:1px solid var(--line-2)}
+  .btn-soft:hover{background:#EFF0F4}
+
+  /* ---------- Nav ---------- */
+  header.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(12,20,36,.06)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;height:68px;position:relative}
+  .brand{display:flex;align-items:center;text-decoration:none}
+  .brand .logo{height:42px;width:auto;display:block}
+  nav.links{display:flex;align-items:center;gap:22px}
+  nav.links a{color:var(--ink-soft);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .2s;white-space:nowrap}
+  nav.links a:hover{color:var(--navy)}
+  nav.links a.nav-phone{font-weight:600;color:var(--navy)}
+  nav.links a.btn{padding:10px 18px;font-size:.86rem;color:#fff}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:6px}
+  .menu-toggle span{display:block;width:22px;height:2px;background:var(--navy);transition:.3s;border-radius:2px}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:96px 0 40px;text-align:center}
+  .hero .chip{margin-bottom:26px}
+  .hero h1{font-size:clamp(2.3rem,5vw,3.6rem);line-height:1.08;max-width:14ch;margin:0 auto 22px}
+  .hero h1 em{font-style:normal;color:var(--gold-deep)}
+  .hero p.lede{font-size:1.12rem;line-height:1.7;color:var(--ink-soft);max-width:60ch;margin:0 auto 30px}
+  .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .hero-note{font-size:.84rem;color:var(--ink-mute);margin-top:18px}
+  .hero-note b{color:var(--navy);font-weight:600}
+  .feature{margin:56px auto 0;max-width:1120px;padding-inline:24px}
+  .feature-card{background:var(--navy);color:var(--on-dark);border-radius:var(--r);padding:44px 48px;box-shadow:var(--shadow-dark);display:grid;grid-template-columns:1fr 1.3fr;gap:44px;align-items:center;position:relative;overflow:hidden}
+  .feature-card::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 320px at 90% -10%,rgba(232,200,120,.18),transparent 60%);pointer-events:none}
+  .feature-card>*{position:relative}
+  .feature-card h2{color:#fff;font-size:1.7rem;margin:14px 0 10px}
+  .feature-card p{color:var(--on-dark-soft);font-size:.98rem;line-height:1.65}
+  .deliv{display:grid;gap:12px}
+  .deliv-item{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-sm);padding:16px 18px}
+  .deliv-item .n{font-family:var(--mono);font-size:.74rem;color:var(--gold-soft);padding-top:4px;flex:0 0 26px}
+  .deliv-item b{display:block;color:#fff;font-weight:600;margin-bottom:3px}
+  .deliv-item span{font-size:.9rem;color:var(--on-dark-soft);line-height:1.5}
+
+  /* ---------- Stats ---------- */
+  .stats-wrap{padding:40px 0 0}
+  .stats{background:var(--card);border:1px solid var(--line);border-radius:var(--r);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;box-shadow:var(--shadow)}
+  .stat{padding:30px 26px}
+  .stat:not(:last-child){border-right:1px solid var(--line)}
+  .stat-num{font-size:2.1rem;font-weight:700;color:var(--navy);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .stat-num .c{color:var(--gold-deep)}
+  .stat-label{margin-top:8px;font-size:.84rem;color:var(--ink-mute)}
+
+  /* ---------- Sections ---------- */
+  section{padding:110px 0}
+  section.tight{padding-top:0}
+  section.tinted{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .section-head{max-width:680px;margin:0 auto 46px;text-align:center}
+  .section-head .chip{margin-bottom:20px}
+  h2{font-size:clamp(1.8rem,3.4vw,2.5rem);line-height:1.15;margin-bottom:14px}
+  .section-head p{font-size:1.06rem;color:var(--ink-soft);line-height:1.7}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 1px 2px rgba(12,20,36,.03)}
+  .checks{list-style:none;display:grid;gap:9px}
+  .checks li{font-size:.92rem;color:var(--ink-soft);padding-left:26px;position:relative;line-height:1.5}
+  .checks li::before{content:"";position:absolute;left:0;top:.28em;width:16px;height:16px;border-radius:50%;background:rgba(196,154,60,.14);border:1px solid rgba(196,154,60,.5)}
+  .checks li::after{content:"";position:absolute;left:5px;top:.5em;width:6px;height:3px;border-left:1.6px solid var(--gold-deep);border-bottom:1.6px solid var(--gold-deep);transform:rotate(-45deg)}
+
+  /* Services */
+  .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .svc{padding:32px;display:flex;flex-direction:column;gap:14px;transition:transform .35s ease,box-shadow .35s ease}
+  .svc:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+  .svc-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .svc-top .code{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--gold-deep)}
+  .svc-top .who{font-size:.74rem;font-weight:500;color:var(--ink-mute);background:var(--bg-2);border:1px solid var(--line);padding:5px 11px;border-radius:999px}
+  .svc h3{font-size:1.35rem;line-height:1.2}
+  .svc p{font-size:.96rem;color:var(--ink-soft);line-height:1.65}
+  .svc .turn{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:.82rem;color:var(--ink-mute);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .svc .turn b{color:var(--navy);font-weight:600}
+  .also{margin-top:20px;padding:26px 30px;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;background:var(--bg-2)}
+  .also .code{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--gold-deep)}
+  .also h3{font-size:1.12rem;margin-bottom:4px}
+  .also p{font-size:.92rem;color:var(--ink-soft);line-height:1.6;max-width:72ch}
+
+  /* QofE */
+  .qoe-card{background:var(--navy);color:var(--on-dark);border-radius:var(--r);padding:48px;box-shadow:var(--shadow-dark);display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;position:relative;overflow:hidden}
+  .qoe-card::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 0% 100%,rgba(232,200,120,.12),transparent 60%);pointer-events:none}
+  .qoe-card>*{position:relative}
+  .ledger{background:var(--navy-ink);border:1px solid rgba(232,200,120,.22);border-radius:var(--r-sm);padding:24px 24px 18px}
+  .ledger .cap{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px;display:flex;justify-content:space-between;gap:10px}
+  .ledger table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:.8rem;font-variant-numeric:tabular-nums}
+  .ledger td{padding:9px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--on-dark-soft)}
+  .ledger td:last-child{text-align:right;color:#fff}
+  .ledger tr.sum td{color:#fff;font-weight:500;border-top:1px solid rgba(232,200,120,.5)}
+  .ledger tr.neg td:last-child{color:#E6A9A0}
+  .ledger .note{font-size:.76rem;color:var(--on-dark-mute);margin-top:12px;line-height:1.5}
+  .qoe-list{display:grid;gap:16px}
+  .qoe-item{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start}
+  .qoe-item .n{font-family:var(--mono);font-size:.72rem;color:var(--gold-soft);padding-top:5px}
+  .qoe-item h3{color:#fff;font-size:1.05rem;margin-bottom:4px}
+  .qoe-item p{font-size:.92rem;color:var(--on-dark-soft);line-height:1.6}
+
+  /* Who */
+  .who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .who-card{padding:28px 26px;display:flex;flex-direction:column;gap:8px}
+  .who-card .ic{width:40px;height:40px;border-radius:12px;background:var(--bg-2);border:1px solid var(--line);display:grid;place-items:center;color:var(--gold-deep);font-family:var(--mono);font-size:.74rem;margin-bottom:8px}
+  .who-card h3{font-size:1.08rem}
+  .who-card p{font-size:.9rem;color:var(--ink-soft);line-height:1.6}
+
+  /* Process */
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+  .step{padding:26px 22px}
+  .step .num{font-size:.74rem;font-weight:600;color:var(--gold-deep);margin-bottom:12px;letter-spacing:.04em}
+  .step h3{font-size:1.08rem;margin-bottom:6px}
+  .step p{font-size:.88rem;color:var(--ink-soft);line-height:1.58}
+  .step .t{margin-top:12px;font-size:.76rem;color:var(--ink-mute)}
+
+  /* Team */
+  .team-card{padding:48px;display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:start}
+  .team-copy p{font-size:1rem;color:var(--ink-soft);line-height:1.72;margin-bottom:14px}
+  .team-copy p strong{color:var(--navy);font-weight:600}
+  .creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .cred{font-size:.8rem;color:var(--ink-soft);border:1px solid var(--line-2);background:var(--bg-2);padding:7px 12px;border-radius:999px}
+  .cred span{color:var(--navy);font-weight:600;margin-right:4px}
+  .diff{display:grid;gap:6px}
+  .diff-item{padding:18px 0;border-top:1px solid var(--line)}
+  .diff-item:last-child{border-bottom:1px solid var(--line)}
+  .diff-item h3{font-size:1.05rem;margin-bottom:4px}
+  .diff-item p{font-size:.92rem;color:var(--ink-soft);line-height:1.6}
+
+  /* FAQ */
+  .faq-list{max-width:780px;margin:0 auto;display:grid;gap:10px}
+  .faq-item{padding:0 24px}
+  .faq-q{width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:20px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;font-family:var(--sans);font-size:1.02rem;color:var(--navy);font-weight:600}
+  .faq-q .pm{width:26px;height:26px;border-radius:50%;background:var(--bg-2);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--mono);font-size:.9rem;color:var(--navy);flex:0 0 auto;transition:transform .3s}
+  .faq-item.open .faq-q .pm{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+  .faq-a p{padding:0 0 22px;font-size:.96rem;color:var(--ink-soft);line-height:1.7;max-width:70ch}
+
+  /* Contact */
+  .contact-card{padding:48px;display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:start}
+  .contact-side h2{text-align:left;margin-top:18px}
+  .contact-side p{font-size:1rem;color:var(--ink-soft);line-height:1.7;margin-bottom:22px}
+  .contact-meta{display:grid;gap:12px;margin-top:10px}
+  .meta-row{display:flex;gap:14px;align-items:flex-start}
+  .meta-row .k{font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute);width:64px;flex:0 0 64px;padding-top:4px}
+  .meta-row .v{font-size:.96rem;color:var(--ink)}
+  .meta-row .v a{color:var(--navy);text-decoration:none;border-bottom:1px solid var(--line-2)}
+  .form-card{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r);padding:32px}
+  .form-card h3{font-size:1.3rem;margin-bottom:4px}
+  .form-card .lead{font-size:.9rem;color:var(--ink-mute);margin-bottom:22px}
+  .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .f-grid .full{grid-column:1/-1}
+  label{display:block;font-size:.78rem;font-weight:600;color:var(--ink-soft);margin-bottom:6px}
+  input,select,textarea{width:100%;font-family:var(--sans);font-size:.95rem;color:var(--ink);background:#fff;border:1px solid var(--line-2);border-radius:10px;padding:12px 14px;transition:border-color .2s,box-shadow .2s}
+  input:focus,select:focus,textarea:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(22,34,58,.08);outline:none}
+  textarea{min-height:110px;resize:vertical}
+  .form-note{font-size:.76rem;color:var(--ink-mute);margin-top:14px;line-height:1.55}
+  .form-note a{color:var(--navy)}
+  .form-msg{margin-top:14px;font-size:.9rem;padding:12px 14px;border-radius:10px;display:none}
+  .form-msg.ok{display:block;background:#E8F3EC;color:#1F4D3A;border:1px solid #BFDCC9}
+  .form-msg.err{display:block;background:#FBEAE5;color:#8A3A1E;border:1px solid #EFC6B8}
+  .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;overflow:hidden}
+
+  /* Footer */
+  footer{background:var(--bg-2);border-top:1px solid var(--line);padding:60px 0 28px;color:var(--ink-soft)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px}
+  .foot-brand .logo{height:52px;width:auto}
+  .foot-brand p{font-size:.9rem;line-height:1.65;max-width:42ch;margin-top:16px}
+  .foot-col h4{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:14px;font-weight:600}
+  .foot-col a{display:block;color:var(--ink-soft);text-decoration:none;font-size:.9rem;margin-bottom:9px;transition:color .2s}
+  .foot-col a:hover{color:var(--navy)}
+  .disclaimer{font-size:.76rem;color:var(--ink-mute);line-height:1.6;max-width:90ch}
+  .foot-bottom{border-top:1px solid var(--line);margin-top:22px;padding-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.78rem;color:var(--ink-mute)}
+  .foot-bottom a{color:var(--ink-mute);text-decoration:none}
+
+  /* Reveal (fail-safe: only active when html.rv-js is present; safety timers reveal everything) */
+  html.rv-js .rv{opacity:0;transform:translateY(18px);filter:blur(8px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1),filter .8s cubic-bezier(.2,.7,.2,1)}
+  html.rv-js .rv.in{opacity:1;transform:none;filter:none}
+  html.rv-js .rv.d1{transition-delay:.08s} html.rv-js .rv.d2{transition-delay:.16s} html.rv-js .rv.d3{transition-delay:.24s} html.rv-js .rv.d4{transition-delay:.32s}
+  @media (prefers-reduced-motion:reduce){html.rv-js .rv{opacity:1;transform:none;filter:none;transition:none}}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1180px){
+    nav.links a.nav-phone{display:none}
+    nav.links{gap:18px}
+  }
+  @media (max-width:1000px){
+    .feature-card,.qoe-card,.team-card,.contact-card{grid-template-columns:1fr;gap:34px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .stat:nth-child(2){border-right:none}
+    .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .who-grid,.steps{grid-template-columns:repeat(2,1fr)}
+    .also{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    nav.links a.nav-phone{display:none}
+  }
+  @media (max-width:760px){
+    section{padding:76px 0}
+    section.tight{padding-top:0}
+    .hero{padding:64px 0 24px}
+    nav.links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:8px 24px 18px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+    nav.links.open{display:flex}
+    nav.links a{padding:12px 0;width:100%;border-bottom:1px solid var(--line)}
+    nav.links a.nav-phone{display:block}
+    nav.links a.btn{margin-top:12px;width:auto;border-bottom:none}
+    .menu-toggle{display:flex}
+    .brand .logo{height:36px}
+    .svc-grid,.who-grid,.steps,.f-grid{grid-template-columns:1fr}
+    .f-grid .full{grid-column:auto}
+    .stats{grid-template-columns:1fr}
+    .stat{border-right:none!important;border-bottom:1px solid var(--line)}
+    .stat:last-child{border-bottom:none}
+    .feature-card,.qoe-card,.team-card,.contact-card{padding:28px 22px}
+    .form-card{padding:22px 18px}
+    .foot-grid{grid-template-columns:1fr}
+    .faq-item{padding:0 16px}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar" id="topbar">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="Kerdai Business Advisors home">
+      <img class="logo" src="logo.svg" alt="Kerdai Business Advisors" width="3608" height="1137">
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    <nav class="links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#qoe">Quality of Earnings</a>
+      <a href="#who">Who We Serve</a>
+      <a href="#process">Process</a>
+      <a href="#team">The Team</a>
+      <a href="#faq">FAQ</a>
+      <a href="tel:+13055010224" class="nav-phone">305-501-0224</a>
+      <a href="#contact" class="btn btn-primary">Request a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="chip">Buy-side M&amp;A advisory</span>
+    <h1>Know what you are buying <em>before</em> you sign.</h1>
+    <p class="lede">Kerdai Business Advisors works for acquirers of privately held companies. We deliver independent business valuations, Quality of Earnings reports and due diligence that stand up to lenders, partners and the seller across the table.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">Request a Scope &amp; Quote</a>
+      <a href="#services" class="btn btn-soft">See what we deliver</a>
+    </div>
+    <div class="hero-note"><b>Independent and buyer-side only.</b> We never represent the seller on the same deal.</div>
+  </div>
+  <div class="feature">
+    <div class="feature-card rv">
+      <div>
+        <span class="chip dark">What you walk away with</span>
+        <h2>A written report you can hand to your lender, your partners and your attorney.</h2>
+        <p>Every engagement ends in a signed document with the conclusion, the evidence behind it and the issues to raise before closing.</p>
+      </div>
+      <div class="deliv">
+        <div class="deliv-item"><div class="n">01</div><div><b>A defensible number</b><span>Value supported by market, income and asset approaches, not a rule of thumb.</span></div></div>
+        <div class="deliv-item"><div class="n">02</div><div><b>Verified earnings</b><span>Adjusted EBITDA with every add-back tested against bank statements and tax returns.</span></div></div>
+        <div class="deliv-item"><div class="n">03</div><div><b>The risks, in writing</b><span>Customer concentration, working capital, owner dependence and anything that should move the price.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap stats-wrap">
+  <div class="stats rv">
+    <div class="stat"><div class="stat-num">20<span class="c">+</span></div><div class="stat-label">Years combined in transactional M&amp;A</div></div>
+    <div class="stat"><div class="stat-num">$100K to $50M</div><div class="stat-label">Deal sizes we assess</div></div>
+    <div class="stat"><div class="stat-num">100<span class="c">%</span></div><div class="stat-label">Buyer-side independence</div></div>
+    <div class="stat"><div class="stat-num">5 to 15</div><div class="stat-label">Business days to a signed report</div></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="chip">Services</span>
+      <h2>Four ways to take the guesswork out of an acquisition.</h2>
+      <p>Most buyers come to us at one of two moments: before they make an offer, or after they sign a letter of intent and need to confirm the numbers. Each service below is scoped to the decision in front of you.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="card svc rv">
+        <div class="svc-top"><span class="code">SERVICE 01</span><span class="who">Before the offer</span></div>
+        <h3>Business Valuation</h3>
+        <p>An independent opinion of what the business is worth to a buyer, built from the company's actual financials and comparable transactions, not the seller's asking price.</p>
+        <ul class="checks">
+          <li>Market, income and asset approaches, reconciled to one conclusion</li>
+          <li>Normalized earnings and owner compensation</li>
+          <li>Accepted by SBA lenders for change-of-ownership loans</li>
+          <li>Litigation-ready and partnership-ready formats on request</li>
+        </ul>
+        <div class="turn"><span>Typical turnaround <b>5 to 10 business days</b></span><span>Fixed fee quoted upfront</span></div>
+      </article>
+      <article class="card svc rv d1">
+        <div class="svc-top"><span class="code">SERVICE 02</span><span class="who">After the LOI</span></div>
+        <h3>Quality of Earnings (QofE)</h3>
+        <p>A line-by-line test of the earnings you are paying for. We tie reported revenue and EBITDA to bank activity, tax returns and customer records, then show you what is real, what is one-time and what is missing.</p>
+        <ul class="checks">
+          <li>Adjusted EBITDA bridge with every add-back documented</li>
+          <li>Revenue quality, customer concentration and churn</li>
+          <li>Net working capital analysis and a proposed peg</li>
+          <li>Proof-of-cash reconciliation</li>
+        </ul>
+        <div class="turn"><span>Typical turnaround <b>10 to 15 business days</b></span><span>Scoped to deal size</span></div>
+      </article>
+      <article class="card svc rv">
+        <div class="svc-top"><span class="code">SERVICE 03</span><span class="who">Before the offer</span></div>
+        <h3>Business Assessment</h3>
+        <p>A faster, lighter review for buyers deciding whether a target deserves a full offer. We read the financials, interview the owner, size the risks and tell you whether to proceed and at what price range.</p>
+        <ul class="checks">
+          <li>Three-year financial trend and margin review</li>
+          <li>Owner dependence and transferability</li>
+          <li>Indicative value range and deal-structure suggestions</li>
+          <li>Red flags to raise in the LOI</li>
+        </ul>
+        <div class="turn"><span>Typical turnaround <b>3 to 5 business days</b></span><span>Credited toward a full engagement</span></div>
+      </article>
+      <article class="card svc rv d1">
+        <div class="svc-top"><span class="code">SERVICE 04</span><span class="who">Under contract</span></div>
+        <h3>Due Diligence</h3>
+        <p>Full financial and operational diligence for buyers who have a signed LOI and a closing date. We manage the request list, review every document and report findings in time to renegotiate or walk away.</p>
+        <ul class="checks">
+          <li>Diligence request list and data-room management</li>
+          <li>Contracts, leases, payroll, AR/AP and inventory review</li>
+          <li>Tax exposure and undisclosed liabilities</li>
+          <li>Closing adjustments and purchase-agreement support</li>
+        </ul>
+        <div class="turn"><span>Typical turnaround <b>Matched to your closing timeline</b></span><span>Weekly findings calls</span></div>
+      </article>
+    </div>
+    <div class="card also rv">
+      <span class="code">ALSO</span>
+      <div>
+        <h3>Buy-Side Representation</h3>
+        <p>For buyers who want an advisor at the table from search to closing: target sourcing, outreach, offer strategy, negotiation and lender coordination. We take on a limited number of these mandates each year, and the valuation and diligence work above is always part of them.</p>
+      </div>
+      <a href="#contact" class="btn btn-soft">Ask about representation</a>
+    </div>
+  </div>
+</section>
+
+<section id="qoe" class="tight">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="chip">Quality of Earnings</span>
+      <h2>The seller's EBITDA is a claim. A QofE turns it into evidence.</h2>
+      <p>Sellers present adjusted earnings in the best light they can. That is their job. Ours is to rebuild the number from source documents, so the price you pay rests on earnings that will still be there the year after closing.</p>
+    </div>
+    <div class="qoe-card rv">
+      <div class="ledger">
+        <div class="cap"><span>Illustrative EBITDA bridge</span><span>TTM, $ thousands</span></div>
+        <table>
+          <tr><td>Reported EBITDA (seller CIM)</td><td>1,240</td></tr>
+          <tr class="neg"><td>Owner salary below market</td><td>(85)</td></tr>
+          <tr><td>Personal vehicle and travel add-back</td><td>42</td></tr>
+          <tr class="neg"><td>Non-recurring insurance recovery</td><td>(118)</td></tr>
+          <tr class="neg"><td>Revenue not supported by deposits</td><td>(64)</td></tr>
+          <tr><td>Legal settlement, one-time</td><td>31</td></tr>
+          <tr class="sum"><td>Diligence-adjusted EBITDA</td><td>1,046</td></tr>
+          <tr><td>Difference at a 3.5x multiple</td><td>(679)</td></tr>
+        </table>
+        <div class="note">Example figures for illustration only. In this case the buyer would have overpaid by roughly $680,000 against the seller's number.</div>
+      </div>
+      <div class="qoe-list">
+        <div class="qoe-item"><div class="n">A</div><div><h3>Proof of cash</h3><p>Every month of reported revenue is reconciled to bank deposits and merchant statements. Unsupported revenue comes out.</p></div></div>
+        <div class="qoe-item"><div class="n">B</div><div><h3>Add-back testing</h3><p>Each owner add-back is traced to an invoice or statement. Add-backs that cannot be documented are not counted, however reasonable they sound.</p></div></div>
+        <div class="qoe-item"><div class="n">C</div><div><h3>Revenue quality</h3><p>Customer concentration, contract terms, pricing changes and churn, so you know whether last year's revenue is likely to repeat.</p></div></div>
+        <div class="qoe-item"><div class="n">D</div><div><h3>Net working capital</h3><p>A trailing analysis of receivables, inventory and payables, and a proposed working-capital peg for the purchase agreement.</p></div></div>
+        <div class="qoe-item"><div class="n">E</div><div><h3>Lender-ready output</h3><p>The report is written to be read by your SBA or commercial lender, your CPA and your attorney, and we take their calls.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="who" class="tinted">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="chip">Who we serve</span>
+      <h2>Buyers who want an independent second set of eyes.</h2>
+      <p>We work with first-time acquirers and experienced investors alike. What they share is a decision worth more than the cost of getting it wrong.</p>
+    </div>
+    <div class="who-grid">
+      <div class="card who-card rv"><div class="ic">IND</div><h3>Individual buyers and searchers</h3><p>Owner-operators, search funds and professionals buying their first or next business, often with SBA 7(a) financing.</p></div>
+      <div class="card who-card rv d1"><div class="ic">PE</div><h3>Private equity and family offices</h3><p>Add-on acquisitions and platform deals in the lower middle market that need a focused, fast QofE without a Big Four invoice.</p></div>
+      <div class="card who-card rv d2"><div class="ic">STR</div><h3>Strategic acquirers</h3><p>Operating companies buying a competitor, supplier or adjacent business and needing a clear view of earnings and integration risks.</p></div>
+      <div class="card who-card rv d3"><div class="ic">PRO</div><h3>Lenders, CPAs and attorneys</h3><p>Advisors who need an independent valuation or earnings report they can rely on for underwriting, partner buyouts or disputes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="chip">Process</span>
+      <h2>Five steps from first call to signed report.</h2>
+      <p>You will know the scope, the fee and the delivery date before we start. Most engagements follow this sequence.</p>
+    </div>
+    <div class="steps">
+      <div class="card step rv"><div class="num">STEP 1</div><h3>Scope</h3><p>A short call about the target, the stage of the deal and what you need the report to do. You receive a fixed-fee proposal the same week.</p><div class="t">Day 0 to 2</div></div>
+      <div class="card step rv d1"><div class="num">STEP 2</div><h3>Request</h3><p>We send a document request list to you or directly to the seller: financials, tax returns, bank statements, customer data, contracts.</p><div class="t">Day 2 to 5</div></div>
+      <div class="card step rv d2"><div class="num">STEP 3</div><h3>Analyze</h3><p>We rebuild the numbers from source documents, interview management and research the market. You get a findings call midway.</p><div class="t">Day 5 to 12</div></div>
+      <div class="card step rv d3"><div class="num">STEP 4</div><h3>Report</h3><p>A written, signed report with the conclusion, the evidence behind it and the issues to raise in negotiation. We walk you through it.</p><div class="t">Day 10 to 15</div></div>
+      <div class="card step rv d4"><div class="num">STEP 5</div><h3>Advise</h3><p>We stay available through closing to answer lender questions, support purchase-agreement terms and update the analysis if the deal changes.</p><div class="t">Through closing</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="tight">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="chip">The team</span>
+      <h2>Transaction people, not just report writers.</h2>
+    </div>
+    <div class="card team-card rv">
+      <div class="team-copy">
+        <p>Kerdai's advisors have spent more than two decades combined on the deal side of M&amp;A: valuing, negotiating and closing acquisitions of privately held companies from the low six figures to the tens of millions. <strong>We know how a number holds up at the closing table because we have sat at it.</strong></p>
+        <p>The team's background spans business brokerage and transaction advisory, institutional M&amp;A consulting, lender diligence and corporate finance. Our advisors hold graduate degrees in business and real estate finance, valuation credentials and memberships in the leading business-transaction associations.</p>
+        <div class="creds">
+          <span class="cred"><span>MBA</span>Master of Business Administration</span>
+          <span class="cred"><span>MSIRE</span>MS International Real Estate</span>
+          <span class="cred"><span>ACV</span>Valuation credential</span>
+          <span class="cred"><span>IBBA</span>International Business Brokers Association</span>
+          <span class="cred"><span>BBF</span>Business Brokers of Florida</span>
+          <span class="cred"><span>20+</span>Years combined in transactional M&amp;A</span>
+        </div>
+      </div>
+      <div class="diff">
+        <div class="diff-item"><h3>Independent by design</h3><p>We are paid a fixed fee for the work, never a percentage of the deal. Our conclusion does not change whether you close or walk away.</p></div>
+        <div class="diff-item"><h3>Source documents, not summaries</h3><p>We do not rely on the seller's spreadsheet. Bank statements, tax returns and customer ledgers are the starting point.</p></div>
+        <div class="diff-item"><h3>Written for your lender</h3><p>Our reports follow the structure SBA and commercial lenders expect, and we answer their questions directly.</p></div>
+        <div class="diff-item"><h3>Sized for the lower middle market</h3><p>Deals between $100,000 and $50 million get the same rigor as larger transactions, at a fee that makes sense for the deal.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="tinted">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="chip">Questions buyers ask</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq-list rv">
+      <div class="card faq-item"><button class="faq-q" aria-expanded="false">What is the difference between a business valuation and a Quality of Earnings report?<span class="pm">+</span></button><div class="faq-a"><p>A valuation answers "what is this business worth?" It applies market, income and asset approaches to normalized financials and concludes on a value or value range. A Quality of Earnings report answers "are the earnings real?" It tests reported revenue and EBITDA against source documents and produces an adjusted earnings figure, working capital analysis and a list of risks. Buyers often need both: the valuation to decide what to offer, the QofE to confirm the number once a letter of intent is signed.</p></div></div>
+      <div class="card faq-item"><button class="faq-q" aria-expanded="false">Does an SBA lender require an independent valuation?<span class="pm">+</span></button><div class="faq-a"><p>For most SBA 7(a) change-of-ownership loans, the lender must obtain an independent business valuation from a qualified source when the amount being financed, less real estate and equipment, exceeds the SBA's threshold or when there is a close relationship between buyer and seller. Our valuation reports are prepared to that standard. Ask your lender to confirm the current requirement for your loan and we will match the scope.</p></div></div>
+      <div class="card faq-item"><button class="faq-q" aria-expanded="false">How much does a valuation or QofE cost?<span class="pm">+</span></button><div class="faq-a"><p>Fees are fixed and quoted before we start. They depend on the size and complexity of the business, the quality of its records and the depth of report you need. A business assessment is the lightest engagement, a lender-ready valuation sits in the middle, and a full QofE on a multi-entity company is the most involved. We will tell you on the first call which scope fits your deal.</p></div></div>
+      <div class="card faq-item"><button class="faq-q" aria-expanded="false">How long does it take?<span class="pm">+</span></button><div class="faq-a"><p>A business assessment takes three to five business days, a valuation five to ten, and a Quality of Earnings report ten to fifteen, counted from the day we receive complete documents. Due diligence runs on your closing timeline. If you are under a deadline, tell us on the scope call and we will say plainly whether we can meet it.</p></div></div>
+      <div class="card faq-item"><button class="faq-q" aria-expanded="false">What documents will you need from the seller?<span class="pm">+</span></button><div class="faq-a"><p>Typically three years of financial statements and tax returns, year-to-date financials, twelve to twenty-four months of bank and merchant statements, an accounts receivable and payable aging, a customer revenue breakdown, payroll records, major contracts and leases, and a schedule of the owner's proposed add-backs. We send a tailored request list on day one and can work directly with the seller or broker to collect it.</p></div></div>
+      <div class="card faq-item"><button class="faq-q" aria-expanded="false">Do you also represent buyers in the acquisition itself?<span class="pm">+</span></button><div class="faq-a"><p>Yes, for a limited number of buyers each year. Buy-side representation covers target search, outreach, offer strategy, negotiation and coordination with lenders and attorneys through closing. Our core work remains valuation, Quality of Earnings and due diligence, and those services are included in every representation mandate.</p></div></div>
+      <div class="card faq-item"><button class="faq-q" aria-expanded="false">Will you talk to my lender, CPA or attorney?<span class="pm">+</span></button><div class="faq-a"><p>Yes. Our reports are written to be read by them, and we take their calls as part of the engagement. If your lender's underwriter has a question about an adjustment or a multiple, we answer it directly.</p></div></div>
+      <div class="card faq-item"><button class="faq-q" aria-expanded="false">What size and type of business do you work on?<span class="pm">+</span></button><div class="faq-a"><p>Privately held companies with transaction values from roughly $100,000 to $50 million, across services, trades, healthcare, distribution, manufacturing, hospitality, franchises and technology. If the target is outside that range, we will say so and point you toward the right resource.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="card contact-card">
+      <div class="contact-side rv">
+        <span class="chip">Get started</span>
+        <h2>Tell us about the deal. We will scope it within two business days.</h2>
+        <p>Share a few details about the target and where you are in the process. We will reply with the scope we recommend, a fixed fee and a delivery date. No obligation, and everything you send is held in confidence.</p>
+        <div class="contact-meta">
+          <div class="meta-row"><div class="k">Email</div><div class="v"><a href="mailto:info@kerdai.com">info@kerdai.com</a></div></div>
+          <div class="meta-row"><div class="k">Phone</div><div class="v"><a href="tel:+13055010224">305-501-0224</a></div></div>
+          <div class="meta-row"><div class="k">Office</div><div class="v">5201 Blue Lagoon Dr., Suite 914<br>Miami, FL 33126. Serving buyers nationwide.</div></div>
+          <div class="meta-row"><div class="k">Hours</div><div class="v">Monday to Friday, 9am to 6pm Eastern</div></div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3>Request a scope and quote</h3>
+        <div class="lead">Takes about two minutes. We reply by email.</div>
+        <form id="leadForm" novalidate>
+          <div class="f-grid">
+            <div><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+            <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+            <div><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div><label for="service">What do you need?</label>
+              <select id="service" name="service" required>
+                <option value="">Select one</option>
+                <option>Business valuation</option>
+                <option>Quality of Earnings report</option>
+                <option>Business assessment</option>
+                <option>Due diligence</option>
+                <option>Buy-side representation</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div><label for="stage">Where is the deal?</label>
+              <select id="stage" name="stage">
+                <option value="">Select one</option>
+                <option>Still evaluating the target</option>
+                <option>Preparing an offer</option>
+                <option>LOI signed</option>
+                <option>Under contract, seeking financing</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div><label for="revenue">Target's annual revenue</label>
+              <select id="revenue" name="revenue">
+                <option value="">Select one</option>
+                <option>Under $1M</option>
+                <option>$1M to $5M</option>
+                <option>$5M to $20M</option>
+                <option>$20M to $50M</option>
+                <option>Over $50M</option>
+              </select>
+            </div>
+            <div class="full"><label for="industry">Target's industry and location</label><input id="industry" name="industry" type="text" placeholder="e.g. HVAC contractor, Tampa FL"></div>
+            <div class="full"><label for="message">Anything else we should know?</label><textarea id="message" name="message" placeholder="Deadline, lender involved, broker involved, specific concerns"></textarea></div>
+            <div class="hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+          </div>
+          <div style="margin-top:20px"><button type="submit" class="btn btn-primary" id="submitBtn">Send request</button></div>
+          <div class="form-msg" id="formMsg" role="status"></div>
+          <div class="form-note">By sending this form you agree to be contacted by Kerdai Business Advisors about your request. We do not sell or share your information. See our <a href="#">privacy policy</a>.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand"><img class="logo" src="logo.svg" alt="Kerdai Business Advisors" width="3608" height="1137"></a>
+        <p>Independent business valuations, Quality of Earnings reports, business assessments and due diligence for buyers of privately held companies. Based in Miami, serving acquirers nationwide.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="#services">Business Valuation</a>
+        <a href="#qoe">Quality of Earnings</a>
+        <a href="#services">Business Assessment</a>
+        <a href="#services">Due Diligence</a>
+        <a href="#services">Buy-Side Representation</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="mailto:info@kerdai.com">info@kerdai.com</a>
+        <a href="tel:+13055010224">305-501-0224</a>
+        <a href="https://maps.google.com/?q=5201+Blue+Lagoon+Dr+Suite+914+Miami+FL+33126" target="_blank" rel="noopener">5201 Blue Lagoon Dr., Suite 914<br>Miami, FL 33126</a>
+      </div>
+      <div class="foot-col">
+        <h4>Firm</h4>
+        <a href="#who">Who We Serve</a>
+        <a href="#process">Our Process</a>
+        <a href="#team">The Team</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="disclaimer">Kerdai Business Advisors provides business valuation, financial due diligence and transaction advisory services. We are not a law firm, a licensed CPA firm or a registered investment adviser, and nothing on this site is legal, tax or investment advice. Illustrative figures on this site are examples and do not describe any actual client or transaction.</div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="yr">2026</span> Kerdai Business Advisors. All rights reserved.</span>
+      <span><a href="#">Privacy Policy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Lead form: set FORM_ENDPOINT to the Apps Script /exec URL once the bridge is deployed.
+  var FORM_ENDPOINT = "";
+  var PAGE_LOADED = Date.now();
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var tog = document.getElementById('menuToggle'), nav = document.getElementById('navLinks');
+  tog.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    tog.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ nav.classList.remove('open'); tog.setAttribute('aria-expanded','false'); }); });
+
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+    q.addEventListener('click', function(){
+      var open = item.classList.toggle('open');
+      q.setAttribute('aria-expanded', open ? 'true' : 'false');
+      a.style.maxHeight = open ? a.scrollHeight + 'px' : '0';
+    });
+  });
+
+  // Scroll reveal, fail-safe: nothing is hidden unless JS runs, and timers reveal everything regardless.
+  var els = document.querySelectorAll('.rv');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (els.length && !reduce && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('rv-js');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:.08});
+    els.forEach(function(el){ io.observe(el); });
+    function revealAll(){ els.forEach(function(el){ el.classList.add('in'); }); }
+    setTimeout(function(){ if (!document.querySelector('.rv.in')) revealAll(); }, 1200);
+    setTimeout(revealAll, 3500);
+  }
+
+  var form = document.getElementById('leadForm'), msg = document.getElementById('formMsg'), btn = document.getElementById('submitBtn');
+  function show(kind, text){ msg.className = 'form-msg ' + kind; msg.textContent = text; }
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var f = form.elements;
+    if (!f.name.value.trim() || !f.email.value.trim() || !f.service.value) { show('err', 'Please add your name, email and what you need so we can scope it.'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.value.trim())) { show('err', 'That email address does not look right. Please check it.'); return; }
+    if (f.company.value) { show('ok', 'Thank you. We will reply within two business days.'); form.reset(); return; }
+    var payload = {
+      name: f.name.value.trim(), email: f.email.value.trim(), phone: f.phone.value.trim(),
+      service: f.service.value, stage: f.stage.value, revenue: f.revenue.value,
+      industry: f.industry.value.trim(), message: f.message.value.trim(),
+      source: 'Kerdai Website', elapsed: Date.now() - PAGE_LOADED
+    };
+    if (!FORM_ENDPOINT) {
+      show('ok', 'Thank you. We will reply within two business days. (Form delivery is not connected yet; email info@kerdai.com in the meantime.)');
+      form.reset(); return;
+    }
+    btn.disabled = true; btn.textContent = 'Sending…';
+    fetch(FORM_ENDPOINT, {method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(payload)})
+      .then(function(r){ return r.json(); })
+      .then(function(d){ if (d && d.ok){ show('ok', 'Thank you. We will reply within two business days.'); form.reset(); } else { throw new Error('bad'); } })
+      .catch(function(){ show('err', 'Something went wrong sending the form. Please email info@kerdai.com instead.'); })
+      .finally(function(){ btn.disabled = false; btn.textContent = 'Send request'; });
+  });
+})();
+</script>
+</body>
+</html>
