@@ -566,7 +566,9 @@
             <div class="full"><label for="message">Anything else we should know?</label><textarea id="message" name="message" placeholder="Deadline, lender involved, broker involved, specific concerns"></textarea></div>
             <div class="hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
           </div>
-          <div style="margin-top:20px"><button type="submit" class="btn btn-primary" id="submitBtn">Send request</button></div>
+          <!-- Cloudflare Turnstile (rendered by script when TURNSTILE_SITEKEY is set): proves the submission came from a human on this page -->
+          <div id="tsBox" style="margin-top:18px"></div>
+          <div style="margin-top:16px"><button type="submit" class="btn btn-primary" id="submitBtn">Send request</button></div>
           <div class="form-msg" id="formMsg" role="status"></div>
           <div class="form-note">By sending this form you agree to be contacted by Kerdai Business Advisors about your request. We do not sell or share your information. See our <a href="privacy.html">privacy policy</a>.</div>
         </form>
@@ -618,6 +620,14 @@
   // Lead form: set FORM_ENDPOINT to the Apps Script /exec URL once the bridge is deployed.
   var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxkbZfoI00oUbMQAdQ2PkSu0SVS3mKvbVrbOjTXlEl0_HyiBbyg__EVjNsvjGiAqKb9iA/exec";
   var PAGE_LOADED = Date.now();
+  // Cloudflare Turnstile site key (public). The bridge rejects posts without a valid token once TURNSTILE_SECRET is set.
+  var TURNSTILE_SITEKEY = "0x4AAAAAAFRj5KrDOcT_xpez";
+  var tsId = null;
+  window.kerdaiTsReady = function(){
+    if (!TURNSTILE_SITEKEY || tsId !== null || !window.turnstile) return;
+    try { tsId = window.turnstile.render('#tsBox', {sitekey: TURNSTILE_SITEKEY, theme: 'light', size: 'flexible'}); } catch (e) {}
+  };
+  function resetTs(){ if (window.turnstile && tsId !== null) { try { window.turnstile.reset(tsId); } catch (e) {} } }
 
   document.getElementById('yr').textContent = new Date().getFullYear();
 
@@ -659,11 +669,15 @@
     if (!f.name.value.trim() || !f.email.value.trim() || !f.service.value) { show('err', 'Please add your name, email and what you need so we can scope it.'); return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.value.trim())) { show('err', 'That email address does not look right. Please check it.'); return; }
     if (f.company.value) { show('ok', 'Thank you. We will reply within two business days.'); form.reset(); return; }
+    var tsField = form.querySelector('[name="cf-turnstile-response"]');
+    var tsToken = tsField ? tsField.value : '';
+    if (TURNSTILE_SITEKEY && window.turnstile && !tsToken) { show('err', 'One moment, the security check is still finishing. Please try again in a few seconds.'); return; }
     var payload = {
       name: f.name.value.trim(), email: f.email.value.trim(), phone: f.phone.value.trim(),
       service: f.service.value, stage: f.stage.value, revenue: f.revenue.value,
       industry: f.industry.value.trim(), message: f.message.value.trim(),
-      source: 'Kerdai Website', elapsed: Date.now() - PAGE_LOADED
+      source: 'Kerdai Website', elapsed: Date.now() - PAGE_LOADED,
+      'cf-turnstile-response': tsToken
     };
     if (!FORM_ENDPOINT) {
       show('ok', 'Thank you. We will reply within two business days. (Form delivery is not connected yet; email info@kerdai.com in the meantime.)');
@@ -672,11 +686,12 @@
     btn.disabled = true; btn.textContent = 'Sending…';
     fetch(FORM_ENDPOINT, {method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(payload)})
       .then(function(r){ return r.json(); })
-      .then(function(d){ if (d && d.ok){ show('ok', 'Thank you. We will reply within two business days.'); form.reset(); } else { throw new Error('bad'); } })
-      .catch(function(){ show('err', 'Something went wrong sending the form. Please email info@kerdai.com instead.'); })
+      .then(function(d){ if (d && d.ok){ show('ok', 'Thank you. We will reply within two business days.'); form.reset(); resetTs(); } else { throw new Error(d && d.error ? d.error : 'bad'); } })
+      .catch(function(err){ resetTs(); show('err', (err && err.message && err.message !== 'bad' && !/fetch/i.test(err.message)) ? err.message : 'Something went wrong sending the form. Please email info@kerdai.com instead.'); })
       .finally(function(){ btn.disabled = false; btn.textContent = 'Send request'; });
   });
 })();
 </script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=kerdaiTsReady" async defer></script>
 </body>
 </html>
