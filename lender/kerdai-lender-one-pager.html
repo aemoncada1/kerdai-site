@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kerdai Business Advisors, SBA Lender Quality of Earnings</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --navy:#16223A; --navy-deep:#111B30; --navy-ink:#0C1424;
+    --gold:#C49A3C; --gold-deep:#A07830; --gold-soft:#E8C878;
+    --bg:#FFFFFF; --bg-2:#F7F7F9; --ink:#141B2B; --ink-soft:#4B5468; --ink-mute:#7A8296;
+    --line:#E6E8EE; --line-2:#D9DCE4; --on-dark:#F2F4F8; --on-dark-soft:#B9C2D4; --on-dark-mute:#8893AA;
+    --sans:"Plus Jakarta Sans","Helvetica Neue",Arial,sans-serif;
+    --mono:"IBM Plex Mono","SFMono-Regular",Menlo,Consolas,monospace;
+  }
+  @page{size:Letter;margin:0}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#fff}
+  body{font-family:var(--sans);color:var(--ink);line-height:1.5;font-size:10.2pt;-webkit-font-smoothing:antialiased;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;break-after:page;display:flex;flex-direction:column;background:#fff}
+  .page:last-child{page-break-after:auto;break-after:auto}
+  @media screen{body{background:#D9DCE4;padding:24px}.page{margin:0 auto 24px;box-shadow:0 20px 50px -30px rgba(12,20,36,.5)}}
+
+  /* header band */
+  .band{background:var(--navy);color:var(--on-dark);padding:.3in .6in .28in;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;overflow:hidden}
+  .band::before{content:"";position:absolute;inset:0;background:radial-gradient(520px 260px at 100% 0%,rgba(232,200,120,.14),transparent 60%);pointer-events:none}
+  .band>*{position:relative}
+  .band img{height:.56in;width:auto;display:block}
+  .band .tag{text-align:right}
+  .band .tag .mono{font-family:var(--mono);font-size:7.2pt;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+  .band .tag .t{font-size:9.4pt;color:var(--on-dark-soft);margin-top:3px}
+
+  .body{padding:.28in .6in .22in;flex:1;display:flex;flex-direction:column}
+  .chip{display:inline-flex;align-items:center;gap:7px;font-size:7.6pt;font-weight:600;color:var(--ink-soft);background:var(--bg-2);border:1px solid var(--line-2);border-radius:999px;padding:4px 11px 4px 9px;letter-spacing:.02em}
+  .chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold)}
+  h1{font-size:21.5pt;line-height:1.12;letter-spacing:-.02em;font-weight:700;color:var(--navy);margin:9px 0 7px;text-wrap:balance}
+  h1 em{font-style:normal;color:var(--gold-deep)}
+  .lede{font-size:9.9pt;color:var(--ink-soft);max-width:6.6in;line-height:1.55}
+  .lede b{color:var(--navy);font-weight:600}
+
+  .cols{display:grid;grid-template-columns:1fr 1fr 1.08fr;gap:.16in;margin-top:.18in}
+  .col{border:1px solid var(--line);border-radius:14px;padding:13px 15px 12px;background:#fff;display:flex;flex-direction:column}
+  .col .code{font-family:var(--mono);font-size:7pt;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep)}
+  .col h2{font-size:12.4pt;font-weight:600;color:var(--navy);letter-spacing:-.01em;margin:4px 0 9px}
+  .checks{list-style:none}
+  .checks li{position:relative;padding-left:18px;font-size:8.9pt;color:var(--ink-soft);line-height:1.4;margin-bottom:5px}
+  .checks li b{color:var(--ink);font-weight:600}
+  .checks li::before{content:"";position:absolute;left:0;top:.42em;width:11px;height:11px;border-radius:50%;background:var(--bg-2);border:1px solid var(--line-2)}
+  .checks li::after{content:"";position:absolute;left:3.5px;top:.52em;width:4.5px;height:2.5px;border-left:1.5px solid var(--gold-deep);border-bottom:1.5px solid var(--gold-deep);transform:rotate(-45deg)}
+  .steps{list-style:none;counter-reset:s}
+  .steps li{position:relative;padding-left:26px;font-size:8.9pt;color:var(--ink-soft);line-height:1.4;margin-bottom:6px;counter-increment:s}
+  .steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:.15em;font-family:var(--mono);font-size:7.4pt;color:var(--gold-deep)}
+  .steps li b{color:var(--ink);font-weight:600}
+  .fee{display:grid;gap:5px}
+  .fee-row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-top:1px solid var(--line);padding-top:5px}
+  .fee-row:first-child{border-top:none;padding-top:0}
+  .fee-row .k{font-size:9pt;color:var(--ink-soft);line-height:1.3}
+  .fee-row .k b{display:block;color:var(--ink);font-weight:600;font-size:9.4pt}
+  .fee-row .v{font-family:var(--mono);font-size:11.6pt;color:var(--navy);font-weight:500;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .fee-row .v small{font-size:8pt;color:var(--ink-mute)}
+  .fee-note{font-size:7.6pt;color:var(--ink-mute);line-height:1.42;margin-top:7px;border-top:1px dashed var(--line-2);padding-top:8px}
+  .col.fee-col{background:var(--bg-2);border-color:var(--line-2)}
+
+  .rule-strip{margin-top:auto;padding-top:.12in}
+  .rule{display:grid;grid-template-columns:1.25fr 1fr;gap:.2in;border-top:1px solid var(--line);padding-top:12px;align-items:start}
+  .rule h3{font-size:9.6pt;font-weight:600;color:var(--navy);margin-bottom:4px}
+  .rule p{font-size:8.5pt;color:var(--ink-soft);line-height:1.44}
+  .rule p b{color:var(--navy);font-weight:600}
+  .rule .cta{background:var(--navy);color:#fff;border-radius:12px;padding:12px 15px;font-size:8.9pt;line-height:1.45}
+  .rule .cta b{display:block;color:var(--gold-soft);font-weight:600;margin-bottom:3px;font-size:9.4pt}
+  .rule .cta span{color:var(--on-dark-soft)}
+  .rule .cta .m{font-family:var(--mono);color:#fff;font-size:9pt}
+
+  .foot{border-top:1px solid var(--line);padding:9px .6in 0;height:.52in;display:flex;justify-content:space-between;align-items:center;font-size:8pt;color:var(--ink-mute);font-family:var(--mono)}
+  .foot b{color:var(--navy);font-weight:500}
+
+  /* page 2 */
+  .p2 .body{padding-top:.18in;padding-bottom:.16in}
+  .p2 .grid2{gap:.14in;margin-top:.14in}
+  .p2 .card{padding:12px 14px}
+  .p2 .card p{font-size:8.5pt;line-height:1.44;margin-bottom:5px}
+  .p2 .card h2{font-size:11.2pt;margin:3px 0 6px}
+  .p2 .ledger{padding:12px 14px 10px}
+  .p2 .ledger table{font-size:7.9pt}
+  .p2 .ledger td{padding:4.2px 0}
+  .p2 .ledger .note{font-size:7.4pt;margin-top:6px}
+  .p2 .creds{margin-top:6px;gap:4px}
+  .p2 .cred{font-size:7.2pt;padding:2px 7px}
+  .p2 .faqs{margin-top:.14in;gap:.14in}
+  .p2 .faq{padding-top:7px}
+  .p2 .faq h3{font-size:9.2pt;margin-bottom:4px}
+  .p2 .faq p{font-size:8.3pt;line-height:1.42}
+  .p2 .contact{padding:12px 16px;gap:12px}
+  .p2 .contact .lead{font-size:9.8pt}
+  .p2 .contact .lead small{font-size:8pt;margin-top:2px}
+  .p2 .contact .v{font-size:8.8pt}
+  .p2 h1{font-size:17.5pt;margin:9px 0 6px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.2in;margin-top:.18in;align-items:stretch}
+  .card{border:1px solid var(--line);border-radius:14px;padding:15px 17px;background:#fff}
+  .card .code{font-family:var(--mono);font-size:7pt;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep)}
+  .card h2{font-size:12pt;font-weight:600;color:var(--navy);letter-spacing:-.01em;margin:4px 0 7px}
+  .card p{font-size:9pt;color:var(--ink-soft);line-height:1.48;margin-bottom:6px}
+  .card p:last-child{margin-bottom:0}
+  .card p b{color:var(--ink);font-weight:600}
+  .card.ind{background:var(--bg-2);border-color:var(--line-2)}
+  .creds{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+  .cred{font-size:7.6pt;color:var(--ink-soft);border:1px solid var(--line-2);background:#fff;border-radius:999px;padding:3px 8px}
+  .cred span{color:var(--navy);font-weight:600;margin-right:3px}
+
+  .ledger{background:var(--navy);color:var(--on-dark);border-radius:14px;padding:15px 17px 12px;position:relative;overflow:hidden}
+  .ledger::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 220px at 0% 100%,rgba(232,200,120,.12),transparent 60%);pointer-events:none}
+  .ledger>*{position:relative}
+  .ledger .cap{font-family:var(--mono);font-size:6.9pt;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px;display:flex;justify-content:space-between;gap:10px}
+  .ledger table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:8.3pt;font-variant-numeric:tabular-nums}
+  .ledger td{padding:5.5px 0;border-top:1px solid rgba(255,255,255,.09);color:var(--on-dark-soft)}
+  .ledger tr:first-child td{border-top:none}
+  .ledger td:last-child{text-align:right;color:#fff}
+  .ledger tr.sum td{color:#fff;font-weight:500;border-top:1px solid rgba(232,200,120,.55)}
+  .ledger tr.neg td:last-child{color:#E6A9A0}
+  .ledger .note{font-size:7.8pt;color:var(--on-dark-mute);margin-top:8px;line-height:1.45}
+
+  .faqs{margin-top:.2in;display:grid;grid-template-columns:1fr 1fr 1fr;gap:.17in}
+  .faq{border-top:2px solid var(--gold);padding-top:9px}
+  .faq h3{font-size:9.8pt;font-weight:600;color:var(--navy);line-height:1.3;margin-bottom:5px}
+  .faq p{font-size:8.7pt;color:var(--ink-soft);line-height:1.46}
+
+  .contact{margin-top:auto;background:var(--navy);color:var(--on-dark);border-radius:14px;padding:15px 18px;display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:14px;align-items:start}
+  .contact .k{font-family:var(--mono);font-size:6.8pt;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:3px}
+  .contact .v{font-size:9.3pt;color:#fff;line-height:1.4}
+  .contact .v small{display:block;font-size:8pt;color:var(--on-dark-soft)}
+  .contact .lead{font-size:10.4pt;font-weight:600;color:#fff;line-height:1.3}
+  .contact .lead small{display:block;font-weight:400;font-size:8.4pt;color:var(--on-dark-soft);margin-top:4px;line-height:1.4}
+</style>
+</head>
+<body>
+
+<!-- FRONT -->
+<section class="page p1">
+  <header class="band">
+    <img src="../logo.svg" alt="Kerdai Business Advisors">
+    <div class="tag">
+      <div class="mono">For SBA 7(a) lenders</div>
+      <div class="t">Lender-commissioned Quality of Earnings</div>
+    </div>
+  </header>
+
+  <div class="body">
+    <span class="chip">SOP 50 10 8.1, effective October 1, 2026</span>
+    <h1>SBA-compliant Quality of Earnings, <em>addressed to your bank,</em> in 10 business days.</h1>
+    <p class="lede">One vendor for every 7(a) acquisition file. <b>A lender-commissioned QofE where SOP 50 10 8.1 requires it</b> (business purchase price of $3 million or more), and a <b>DSC Verification</b> where it does not. Fixed fees by product and purchase price, written in credit terms, delivered in 10 business days from a complete document set, and we answer your underwriter's calls.</p>
+
+    <div class="cols">
+      <div class="col">
+        <div class="code">01 / What you get</div>
+        <h2>The report your credit file needs</h2>
+        <ul class="checks">
+          <li><b>Proof of cash</b>, trailing twelve months plus two fiscal years, reconciled to bank and merchant deposits</li>
+          <li><b>Add-back schedule</b> with every adjustment tied to a source document</li>
+          <li><b>Book-to-tax reconciliation</b> of the financial statements to filed returns</li>
+          <li><b>Customer concentration</b> and revenue durability</li>
+          <li><b>DSC-ready adjusted earnings</b>, so the number drops straight into your debt-service coverage calculation</li>
+          <li>Net working capital trend and findings in plain credit language</li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <div class="code">02 / How it works</div>
+        <h2>Lender engages, borrower pays at closing</h2>
+        <ol class="steps">
+          <li><b>You sign the engagement letter.</b> The report is addressed to the bank and the bank is the client.</li>
+          <li><b>Borrower pays the fee at closing</b> as a loan cost. No retainer from the bank.</li>
+          <li><b>Day 1: document request</b> goes to the buyer and seller. We collect directly, you stay copied.</li>
+          <li><b>Day 5: findings call</b> with your BDO and underwriter. If earnings are coming in light, you hear it here, not on day 10.</li>
+          <li><b>Day 10: signed report</b> delivered, counted from a complete document set, with workpapers available on request.</li>
+        </ol>
+      </div>
+
+      <div class="col fee-col">
+        <div class="code">03 / Fee</div>
+        <h2>Published, flat, by product</h2>
+        <div class="fee">
+          <div class="fee-row"><div class="k"><b>QofE, up to $5M</b>10 business days</div><div class="v">$9,500</div></div>
+          <div class="fee-row"><div class="k"><b>QofE, $5M to $10M</b>10 business days</div><div class="v">$14,500</div></div>
+          <div class="fee-row"><div class="k"><b>QofE rush</b>7 business days</div><div class="v">+$2,500</div></div>
+          <div class="fee-row"><div class="k"><b>QofE above $10M</b>or multi-entity, 48 hours</div><div class="v">Quoted</div></div>
+          <div class="fee-row"><div class="k"><b>DSC Verification</b>sub-$3M files, 7 business days</div><div class="v">$4,500</div></div>
+          <div class="fee-row"><div class="k"><b>Review letter</b>buyer-ordered QofE, 5 days</div><div class="v">$2,500</div></div>
+          <div class="fee-row"><div class="k"><b>SBA valuation</b>change of ownership, Qualified Source (CVA, NACVA), 7 days</div><div class="v">$3,500</div></div>
+        </div>
+        <div class="fee-note">Purchase price measured before equity injection and seller notes, as the SOP measures it. Days count from a complete document set. Fees cover the deliverable, the findings call and underwriter questions through closing. Travel, if any, at cost.</div>
+      </div>
+    </div>
+
+    <div class="rule-strip">
+      <div class="rule">
+        <div>
+          <h3>Which product for which file</h3>
+          <p><b>$3M and up:</b> the SOP requires a lender-commissioned QofE, and a report prepared by or for the borrower or seller does not count. <b>Under $3M:</b> DSC Verification, a two-page memo to the bank with the cash proof (TTM plus last fiscal year), add-back check against source documents, book-to-tax reconciliation and adjusted earnings for the DSC calculation. <b>Buyer already ordered a QofE:</b> we review it and issue a lender reliance letter, per SBA's August 2026 training.</p>
+        </div>
+        <div class="cta">
+          <b>Request the vendor packet</b>
+          <span>Engagement letter template, W-9, independence policy and methodology note. Redacted sample report available on request. Signed by Alejandra B. Barrera, Managing Partner.</span><br>
+          <span class="m">info@kerdai.com &nbsp;·&nbsp; 305-501-0224</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <span><b>Kerdai Business Advisors</b> &nbsp;·&nbsp; kerdaibusinessadvisors.com</span>
+    <span>Independence statement, team and sample bridge on the back &rarr;</span>
+  </footer>
+</section>
+
+<!-- BACK -->
+<section class="page p2">
+  <header class="band">
+    <img src="../logo.svg" alt="Kerdai Business Advisors">
+    <div class="tag">
+      <div class="mono">Vendor information</div>
+      <div class="t">Independence, team and sample work</div>
+    </div>
+  </header>
+
+  <div class="body">
+    <div class="grid2">
+      <div class="card ind">
+        <div class="code">Independence statement</div>
+        <h2>No stake in the deal closing</h2>
+        <p><b>Kerdai accepts lender-commissioned Quality of Earnings engagements only from the lender.</b> We do not accept engagements from the borrower or the seller on the same transaction, and we are paid a fixed fee that does not change with the outcome of the loan.</p>
+        <p><b>Disclosure of common ownership.</b> Kerdai's principals also own IC-USA, a business brokerage. Kerdai declines any lender-commissioned work on a transaction where IC-USA or its agents represent the buyer or the seller, and we confirm this in writing in every engagement letter before work begins.</p>
+        <p>If a conflict surfaces after engagement, we withdraw, return any fee and refer the bank to another provider.</p>
+      </div>
+
+      <div class="card">
+        <div class="code">The team</div>
+        <h2>Transaction people, not just report writers</h2>
+        <p>Kerdai's advisors have spent more than two decades combined on the deal side of M&amp;A: valuing, negotiating and closing acquisitions of privately held companies from the low six figures to the tens of millions. <b>We know how a number holds up at the closing table because we have sat at it.</b></p>
+        <p><b>Valuations signed by a NACVA Certified Valuation Analyst (CVA), an SBA Qualified Source under SOP 50 10 8.1.</b></p>
+        <div class="creds">
+          <span class="cred"><span>MBA</span>Business Administration</span>
+          <span class="cred"><span>MSIRE</span>International Real Estate</span>
+          <span class="cred"><span>CVA</span>Certified Valuation Analyst (NACVA)</span>
+          <span class="cred"><span>IBBA</span>Intl. Business Brokers Assn.</span>
+          <span class="cred"><span>BBF</span>Business Brokers of Florida</span>
+          <span class="cred"><span>20+</span>Years combined in M&amp;A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="ledger">
+        <div class="cap"><span>Illustrative EBITDA bridge</span><span>TTM, $ thousands</span></div>
+        <table>
+          <tr><td>Reported EBITDA (seller CIM)</td><td>1,240</td></tr>
+          <tr class="neg"><td>Owner salary below market</td><td>(85)</td></tr>
+          <tr><td>Personal vehicle and travel add-back</td><td>42</td></tr>
+          <tr class="neg"><td>Non-recurring insurance recovery</td><td>(118)</td></tr>
+          <tr class="neg"><td>Revenue not supported by deposits</td><td>(64)</td></tr>
+          <tr><td>Legal settlement, one-time</td><td>31</td></tr>
+          <tr class="sum"><td>Diligence-adjusted EBITDA</td><td>1,046</td></tr>
+          <tr><td>Difference at a 3.5x multiple</td><td>(679)</td></tr>
+        </table>
+        <div class="note">Example figures for illustration only. In this case the seller's number overstated debt-service capacity by about 16 percent, and the purchase price by roughly $680,000.</div>
+      </div>
+
+      <div class="card">
+        <div class="code">What the bridge gives your underwriter</div>
+        <h2>Earnings you can put in the DSC</h2>
+        <p><b>Every line is traced.</b> Each adjustment on the bridge points to a bank statement, invoice, tax return or payroll record in the workpapers, so a reviewer can follow it without calling us.</p>
+        <p><b>Unsupported revenue comes out.</b> Months where reported sales do not tie to deposits are reduced to what the deposits support, with the gap explained.</p>
+        <p><b>Undocumented add-backs are not counted,</b> however reasonable they sound. The schedule lists what was claimed, what was accepted and why, and the result is stated as adjusted EBITDA and as cash flow available for debt service.</p>
+      </div>
+    </div>
+
+    <div class="faqs">
+      <div class="faq">
+        <h3>Can the bank rely on the report?</h3>
+        <p>Yes. The engagement letter names the bank as the client and the party entitled to rely on the report for its credit decision and SBA file. The borrower gets a copy only with the bank's permission, under a non-reliance notice.</p>
+      </div>
+      <div class="faq">
+        <h3>What if the valuation comes back different?</h3>
+        <p>The QofE establishes the earnings, the valuation applies a multiple to them. If the appraiser needs a reconciliation to our figure, or the structure changes and the bank needs a revised bridge, we issue a revision at no added fee within 30 days of the report date.</p>
+      </div>
+      <div class="faq">
+        <h3>What happens when add-backs fail?</h3>
+        <p>You hear it on the day-5 call, not in the final report. We quantify the shortfall against projected DSC so the BDO can renegotiate price or structure before the credit memo is written. We do not soften a finding to keep a deal alive.</p>
+      </div>
+    </div>
+
+    <div class="contact">
+      <div>
+        <div class="lead">Send us the next file.<small>Scope confirmed within one business day of the LOI and purchase price.</small></div>
+      </div>
+      <div><div class="k">Contact</div><div class="v">Alejandra B. Barrera<small>Managing Partner</small></div></div>
+      <div><div class="k">Phone and email</div><div class="v">305-501-0224<small>info@kerdai.com</small></div></div>
+      <div><div class="k">Office</div><div class="v">5201 Blue Lagoon Dr.<small>Suite 914, Miami, FL 33126</small></div></div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <span><b>Kerdai LLC</b> d/b/a Kerdai Business Advisors</span>
+    <span>SOP 50 10 8.1 summarized here; the SOP text governs.</span>
+  </footer>
+</section>
+
+</body>
+</html>
