@@ -167,6 +167,29 @@
   .step p{font-size:.88rem;color:var(--ink-soft);line-height:1.58}
   .step .t{margin-top:12px;font-size:.76rem;color:var(--ink-mute)}
 
+  /* Lenders */
+  .lender-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:start}
+  .fee-card{padding:32px}
+  .fee-card .code{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--gold-deep);margin-bottom:8px}
+  .fee-card h3{font-size:1.15rem;margin-bottom:14px}
+  .fee-card table{width:100%;border-collapse:collapse;font-size:.95rem}
+  .fee-card td{padding:14px 0;border-top:1px solid var(--line);vertical-align:top;color:var(--ink-soft);line-height:1.45}
+  .fee-card tr:first-child td{border-top:none;padding-top:0}
+  .fee-card td b{display:block;color:var(--navy);font-weight:600}
+  .fee-card td:last-child{text-align:right;font-family:var(--mono);color:var(--navy);font-size:1.15rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .fee-card .fn{font-size:.82rem;color:var(--ink-mute);margin-top:16px;line-height:1.55;border-top:1px dashed var(--line-2);padding-top:14px}
+  .sop-card{padding:32px}
+  .sop-card .code{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--gold-deep);margin-bottom:8px}
+  .sop-card h3{font-size:1.15rem;margin-bottom:12px}
+  .sop-card .checks{margin-bottom:24px}
+  .lender-cta{display:flex;flex-wrap:wrap;gap:12px}
+  .ind-card{margin-top:20px;padding:36px;display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:start;background:var(--navy);color:var(--on-dark)}
+  .ind-card .code{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--gold-soft);margin-bottom:8px}
+  .ind-card h3{color:#fff;font-size:1.35rem;line-height:1.25}
+  .ind-card p{font-size:.95rem;color:var(--on-dark-soft);line-height:1.68;margin-bottom:12px}
+  .ind-card p:last-child{margin-bottom:0}
+  .ind-card p b{color:#fff;font-weight:600}
+
   /* Team */
   .team-card{padding:48px;display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:start}
   .team-copy p{font-size:1rem;color:var(--ink-soft);line-height:1.72;margin-bottom:14px}
@@ -238,7 +261,7 @@
     nav.links{gap:18px}
   }
   @media (max-width:1000px){
-    .feature-card,.qoe-card,.team-card,.contact-card{grid-template-columns:1fr;gap:34px}
+    .feature-card,.qoe-card,.team-card,.contact-card,.lender-grid,.ind-card{grid-template-columns:1fr;gap:34px}
     .stats{grid-template-columns:repeat(2,1fr)}
     .stat:nth-child(2){border-right:none}
     .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
@@ -263,7 +286,7 @@
     .stats{grid-template-columns:1fr}
     .stat{border-right:none!important;border-bottom:1px solid var(--line)}
     .stat:last-child{border-bottom:none}
-    .feature-card,.qoe-card,.team-card,.contact-card{padding:28px 22px}
+    .feature-card,.qoe-card,.team-card,.contact-card,.fee-card,.sop-card,.ind-card{padding:28px 22px}
     .form-card{padding:22px 18px}
     .foot-grid{grid-template-columns:1fr}
     .faq-item{padding:0 16px}
@@ -281,6 +304,7 @@
     <nav class="links" id="navLinks">
       <a href="#services">Services</a>
       <a href="#qoe">Quality of Earnings</a>
+      <a href="#lenders">For Lenders</a>
       <a href="#who">Who We Serve</a>
       <a href="#process">Process</a>
       <a href="#team">The Team</a>
@@ -342,7 +366,7 @@
         <ul class="checks">
           <li>Market, income and asset approaches, reconciled to one conclusion</li>
           <li>Normalized earnings and owner compensation</li>
-          <li>Accepted by SBA lenders for change-of-ownership loans</li>
+          <li>Accepted by SBA lenders for change-of-ownership loans, prepared by a CVA, an SBA Qualified Source</li>
           <li>Litigation-ready and partnership-ready formats on request</li>
         </ul>
         <div class="turn"><span>Typical turnaround <b>5 to 10 business days</b></span><span>Fixed fee quoted upfront</span></div>
@@ -428,6 +452,57 @@
   </div>
 </section>
 
+<section id="lenders">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="chip">For SBA lenders</span>
+      <h2>Lender-commissioned Quality of Earnings, at a published fee.</h2>
+      <p>Since October 1, 2026, SBA SOP 50 10 8.1 puts the QofE in the lender's hands on larger 7(a) acquisitions. Kerdai prepares the report for the bank at a flat fee, in 10 business days from a complete document set, and offers a lighter DSC Verification for the files the SOP does not reach.</p>
+    </div>
+    <div class="lender-grid">
+      <div class="card fee-card rv">
+        <div class="code">FEE SCHEDULE</div>
+        <h3>Flat, by product and purchase price</h3>
+        <table>
+          <tr><td><b>QofE, up to $5M</b>Business purchase price, 10 business days</td><td>$9,500</td></tr>
+          <tr><td><b>QofE, $5M to $10M</b>Business purchase price, 10 business days</td><td>$14,500</td></tr>
+          <tr><td><b>QofE rush delivery</b>7 business days instead of 10</td><td>+$2,500</td></tr>
+          <tr><td><b>QofE above $10M or multi-entity</b>Quoted within 48 hours</td><td>Quoted</td></tr>
+          <tr><td><b>DSC Verification</b>Sub-$3M files, 7 business days. Cash proof, add-back check, book-to-tax reconciliation and adjusted earnings for the DSC, in a two-page memo to the bank</td><td>$4,500</td></tr>
+          <tr><td><b>Lender review letter</b>On a buyer-ordered QofE, 5 business days</td><td>$2,500</td></tr>
+          <tr><td><b>SBA change-of-ownership valuation</b>By a Qualified Source (CVA, NACVA), 7 business days from a complete document set</td><td>$3,500</td></tr>
+        </table>
+        <div class="fn">Purchase price measured before equity injection and seller notes, as the SOP measures it. Days are counted from a complete document set. The QofE fee covers the report, a findings call on day 5 and underwriter questions through closing. The borrower pays the fee at closing as a loan cost; the bank advances nothing.</div>
+      </div>
+      <div class="card sop-card rv d1">
+        <div class="code">SOP 50 10 8.1, IN BRIEF</div>
+        <h3>What changed on October 1, 2026</h3>
+        <ul class="checks">
+          <li>On 7(a) Initial Acquisition and Business Expansion loans with a business purchase price of $3 million or more, the <strong>lender</strong> must obtain a Quality of Earnings report.</li>
+          <li>The report must be prepared by an independent, experienced financial professional for the benefit of the lender. A report prepared by or for the borrower or seller does not satisfy the requirement.</li>
+          <li>The lender must use the QofE earnings in its debt-service coverage calculation.</li>
+          <li>Owner buyouts and ESOPs are exempt. Every change of ownership still needs a lender-commissioned valuation from a Qualified Source.</li>
+        </ul>
+        <div class="lender-cta">
+          <a href="#contact" class="btn btn-primary" data-service="Lender: QofE vendor packet">Request the Vendor Packet</a>
+          <a href="lender/kerdai-lender-one-pager.pdf" class="btn btn-soft" target="_blank" rel="noopener">Download the Lender One-Pager</a>
+        </div>
+      </div>
+    </div>
+    <div class="card ind-card rv">
+      <div>
+        <div class="code">INDEPENDENCE STATEMENT</div>
+        <h3>No stake in the deal closing.</h3>
+      </div>
+      <div>
+        <p><b>Kerdai accepts lender-commissioned QofE engagements only from the lender.</b> We do not accept engagements from the borrower or the seller on the same transaction, and we are paid a fixed fee that does not change with the outcome of the loan.</p>
+        <p><b>Disclosure of common ownership.</b> Kerdai's principals also own IC-USA, a business brokerage. Kerdai declines any lender-commissioned work on a transaction where IC-USA or its agents represent the buyer or the seller, and confirms this in writing in every engagement letter before work begins. If a conflict surfaces after engagement, we withdraw, return any fee and refer the bank to another provider.</p>
+        <p>The vendor packet includes the engagement letter template addressed to the lender, our W-9, the written independence policy and a methodology note on the cash proof. A redacted sample report is available on request.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="who" class="tinted">
   <div class="wrap">
     <div class="section-head rv">
@@ -474,7 +549,7 @@
         <div class="creds">
           <span class="cred"><span>MBA</span>Master of Business Administration</span>
           <span class="cred"><span>MSIRE</span>MS International Real Estate</span>
-          <span class="cred"><span>ACV</span>Valuation credential</span>
+          <span class="cred"><span>CVA</span>Certified Valuation Analyst (NACVA)</span>
           <span class="cred"><span>IBBA</span>International Business Brokers Association</span>
           <span class="cred"><span>BBF</span>Business Brokers of Florida</span>
           <span class="cred"><span>20+</span>Years combined in transactional M&amp;A</span>
@@ -539,6 +614,7 @@
                 <option>Business assessment</option>
                 <option>Due diligence</option>
                 <option>Buy-side representation</option>
+                <option>Lender: QofE vendor packet</option>
                 <option>Not sure yet</option>
               </select>
             </div>
@@ -693,5 +769,9 @@
 })();
 </script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=kerdaiTsReady" async defer></script>
+<script>
+  // Lender CTA: preselect the service when arriving at the form from the For Lenders section.
+  document.querySelectorAll('[data-service]').forEach(function(a){a.addEventListener('click',function(){var sel=document.getElementById('service');if(sel){sel.value=a.getAttribute('data-service');}});});
+</script>
 </body>
 </html>
