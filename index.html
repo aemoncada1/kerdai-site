@@ -92,6 +92,17 @@
   .dr-credit p{font-size:.95rem;color:var(--on-dark-soft);line-height:1.65}
   .dr-credit p b{color:#fff;font-weight:600}
 
+  /* ---------- Track record ---------- */
+  .tr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .tr-tile{padding:26px 24px;display:flex;flex-direction:column;gap:10px}
+  .tr-tile .code{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--gold-deep)}
+  .tr-tile h3{font-size:1.05rem;line-height:1.3}
+  .tr-tile p{font-size:.9rem;color:var(--ink-soft);line-height:1.6}
+  .card.tr-note{margin-top:20px;padding:32px 36px;display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:start;background:var(--bg-2)}
+  .tr-note .code{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--gold-deep);margin-bottom:8px}
+  .tr-note h3{font-size:1.3rem;line-height:1.25}
+  .tr-note .fn{font-size:.82rem;color:var(--ink-mute);margin-top:14px;line-height:1.55}
+
   /* ---------- Nav ---------- */
   header.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(12,20,36,.06)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;height:68px;position:relative}
@@ -294,6 +305,8 @@
   @media (max-width:1000px){
     .feature-card,.qoe-card,.team-card,.contact-card,.lender-grid,.ind-card,.dr-detail{grid-template-columns:1fr;gap:34px}
     .dr-grid{grid-template-columns:1fr}
+    .tr-grid{grid-template-columns:repeat(2,1fr)}
+    .card.tr-note{grid-template-columns:1fr;gap:20px}
     .card.dr-credit{grid-template-columns:1fr;gap:12px}
     .stats{grid-template-columns:repeat(2,1fr)}
     .stat:nth-child(2){border-right:none}
@@ -321,6 +334,8 @@
     .stat:last-child{border-bottom:none}
     .feature-card,.qoe-card,.team-card,.contact-card,.fee-card,.sop-card,.ind-card,.dr-card{padding:28px 22px}
     .plan{padding:26px 22px}
+    .tr-grid{grid-template-columns:1fr}
+    .card.tr-note{padding:28px 22px}
     .dr-credit{padding:24px 22px}
     .form-card{padding:22px 18px}
     .foot-grid{grid-template-columns:1fr}
@@ -342,6 +357,7 @@
       <a href="#qoe">Quality of Earnings</a>
       <a href="#lenders">For Lenders</a>
       <a href="#who">Who We Serve</a>
+      <a href="#track-record">Why Kerdai</a>
       <a href="#process">Process</a>
       <a href="#team">The Team</a>
       <a href="#faq">FAQ</a>
@@ -509,9 +525,8 @@
           <li>Use within 60 days</li>
         </ul>
         <div class="plan-cta">
-          <!-- TODO: replace href with the Stripe or Square checkout link once it exists -->
-          <a href="#contact" class="btn btn-primary" data-service="Deal Review package">Start a Deal Review</a>
-          <small>Prepaid by card. Until online checkout is live, request below and we email a payment link the same day.</small>
+          <a href="https://buy.stripe.com/7sY00i6TK8MpdGhbhy3gk00" class="btn btn-primary" target="_blank" rel="noopener">Buy Deal Review, $199</a>
+          <small>Secure checkout by Stripe. The checkout page and your card statement show IC-USA, Kerdai's affiliated company. We email your upload link within one business day.</small>
         </div>
       </article>
       <article class="card plan featured rv d1">
@@ -527,9 +542,8 @@
           <li>Use within 90 days</li>
         </ul>
         <div class="plan-cta">
-          <!-- TODO: replace href with the Stripe or Square checkout link once it exists -->
-          <a href="#contact" class="btn btn-primary" data-service="Deal Review package">Start with Four Reviews</a>
-          <small>Prepaid by card. Until online checkout is live, request below and we email a payment link the same day.</small>
+          <a href="https://buy.stripe.com/00w8wOguk6Eh8lX0CU3gk01" class="btn btn-primary" target="_blank" rel="noopener">Buy Four Reviews, $298</a>
+          <small>Secure checkout by Stripe. The checkout page and your card statement show IC-USA, Kerdai's affiliated company. We email your upload link within one business day.</small>
         </div>
       </article>
       <article class="card plan rv d2">
@@ -544,8 +558,8 @@
           <li>Unused reviews do not roll over</li>
         </ul>
         <div class="plan-cta">
-          <a href="#contact" class="btn btn-soft" data-service="Deal Review package">Ask about Active Search</a>
-          <small>Monthly billing starts after a short call to confirm your search criteria.</small>
+          <a href="https://buy.stripe.com/dRmaEWfqg0fTeKl1GY3gk02" class="btn btn-soft" target="_blank" rel="noopener">Subscribe, $399 a month</a>
+          <small>Billed monthly by card through Stripe, cancel anytime. We confirm your search criteria on the first call. Prefer to talk first? <a href="#contact" data-service="Deal Review package">Send a note</a>.</small>
         </div>
       </article>
     </div>
@@ -566,7 +580,7 @@
         <div class="code">HOW IT WORKS</div>
         <h3>Pay once, send the CIM, get the memo.</h3>
         <ol class="dr-steps">
-          <li><b>Pick a package</b> and prepay by card. We confirm by email within one business day.</li>
+          <li><b>Pick a package</b> and pay by card through Stripe. We confirm by email within one business day.</li>
           <li><b>Send the deal.</b> Upload the CIM or broker summary, and tax returns if you have them, through the secure link in your confirmation email. No NDA problem: we sign the broker's NDA when asked.</li>
           <li><b>Read the memo</b> in two business days, next business day on the Active Search plan.</li>
           <li><b>Book your time</b> with an advisor from the calendar link, in 30 or 60 minute blocks, for the deals reviewed or anything else on your search.</li>
@@ -645,6 +659,37 @@
       <div class="card who-card rv d1"><div class="ic">PE</div><h3>Private equity and family offices</h3><p>Add-on acquisitions and platform deals in the lower middle market that need a focused, fast QofE without a Big Four invoice.</p></div>
       <div class="card who-card rv d2"><div class="ic">STR</div><h3>Strategic acquirers</h3><p>Operating companies buying a competitor, supplier or adjacent business and needing a clear view of earnings and integration risks.</p></div>
       <div class="card who-card rv d3"><div class="ic">PRO</div><h3>Lenders, CPAs and attorneys</h3><p>Advisors who need an independent valuation or earnings report they can rely on for underwriting, partner buyouts or disputes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="track-record">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="chip">Why Kerdai</span>
+      <h2>Every opinion we give is checked against hundreds of deals we have already seen.</h2>
+      <p>Kerdai's principals have spent years on both sides of the table, and they kept the record. Deals reviewed for buyers, businesses assessed for owners long before a sale, companies taken to market and sold, and companies stabilized first and sold two or three years later at a higher multiple. That history lives in one working database, and every deal review, valuation and Quality of Earnings report is benchmarked against it.</p>
+    </div>
+    <div class="tr-grid">
+      <div class="card tr-tile rv"><span class="code">01</span><h3>Deals reviewed for buyers</h3><p>CIMs, financial recaps and data rooms read for acquirers across services, trades, healthcare, distribution and manufacturing. We know which listings close and which never do.</p></div>
+      <div class="card tr-tile rv d1"><span class="code">02</span><h3>Owner assessments before a sale</h3><p>Businesses assessed for owners who were not ready to sell, chose not to, or went to market right away. We have seen what the books look like years before a buyer does.</p></div>
+      <div class="card tr-tile rv d2"><span class="code">03</span><h3>Sold after stabilization</h3><p>Companies where the fix came first and the sale two or three years later, at a higher multiple. We know which improvements a buyer will actually pay for.</p></div>
+      <div class="card tr-tile rv d3"><span class="code">04</span><h3>Benchmarks by trade, size and market</h3><p>Margins, add-back patterns, working capital and multiples by industry and region, drawn from real transactions rather than published surveys.</p></div>
+    </div>
+    <div class="card tr-note rv">
+      <div>
+        <div class="code">WHAT IT MEANS FOR YOUR DEAL</div>
+        <h3>Pattern recognition you cannot get from one data room.</h3>
+      </div>
+      <div>
+        <ul class="checks">
+          <li>When a seller's margin is five points above every comparable business we have reviewed, we know where to look.</li>
+          <li>When an add-back schedule follows a pattern that failed diligence on a prior deal, we say so before the LOI.</li>
+          <li>When a listing has been reviewed before, for another buyer, we know what the broker did not volunteer.</li>
+          <li>When a multiple is out of line for the trade and the region, we show you the comparable transactions that say so.</li>
+        </ul>
+        <div class="fn">Client and transaction records are confidential. Benchmarks are aggregated and anonymized, and nothing from one engagement is disclosed in another.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -817,6 +862,7 @@
       <div class="foot-col">
         <h4>Firm</h4>
         <a href="#who">Who We Serve</a>
+        <a href="#track-record">Why Kerdai</a>
         <a href="#process">Our Process</a>
         <a href="#team">The Team</a>
         <a href="#faq">FAQ</a>
