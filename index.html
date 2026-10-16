@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Kerdai Business Advisors</title>
-<meta name="description" content="Buy-side M&A advisory for acquirers of privately held businesses. Independent business valuations, Quality of Earnings reports, business assessments and due diligence, so you know what you are buying before you sign.">
+<meta name="description" content="Buy-side M&A advisory for acquirers of privately held businesses. Deal reviews from $199, independent business valuations, Quality of Earnings reports, business assessments and due diligence, so you know what you are buying before you sign.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.kerdaibusinessadvisors.com/">
 <meta property="og:title" content="Know what you are buying before you sign | Kerdai Business Advisors">
@@ -60,6 +60,37 @@
   .btn-primary:hover{background:var(--navy-deep);transform:translateY(-1px)}
   .btn-soft{background:var(--bg-2);color:var(--navy);border:1px solid var(--line-2)}
   .btn-soft:hover{background:#EFF0F4}
+
+  /* ---------- Deal Review ---------- */
+  .dr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+  .plan{padding:30px 28px;display:flex;flex-direction:column;gap:14px;position:relative}
+  .plan .code{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--gold-deep)}
+  .plan h3{font-size:1.25rem;line-height:1.2}
+  .plan .price{display:flex;align-items:baseline;gap:8px;margin:2px 0 4px}
+  .plan .price b{font-family:var(--mono);font-size:2.1rem;font-weight:600;color:var(--navy);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .plan .price span{font-size:.88rem;color:var(--ink-mute)}
+  .plan .sub{font-size:.92rem;color:var(--ink-soft);line-height:1.55}
+  .plan .checks{margin-top:4px}
+  .plan .plan-cta{margin-top:auto;padding-top:18px;display:grid;gap:10px}
+  .plan .plan-cta .btn{width:100%}
+  .plan .plan-cta small{font-size:.78rem;color:var(--ink-mute);line-height:1.45;text-align:center}
+  .card.plan.featured{border-color:rgba(196,154,60,.55);box-shadow:0 18px 40px -24px rgba(22,34,58,.35)}
+  .plan .badge{position:absolute;top:-12px;right:22px;font-size:.72rem;font-weight:600;letter-spacing:.04em;background:var(--gold);color:var(--navy);padding:5px 11px;border-radius:999px}
+  .dr-detail{margin-top:20px;display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:start}
+  .dr-card{padding:32px}
+  .dr-card .code{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--gold-deep);margin-bottom:8px}
+  .dr-card h3{font-size:1.15rem;margin-bottom:12px}
+  .dr-card p{font-size:.95rem;color:var(--ink-soft);line-height:1.65;margin-bottom:12px}
+  .dr-card p:last-child{margin-bottom:0}
+  .dr-card p b{color:var(--navy);font-weight:600}
+  .dr-steps{list-style:none;display:grid;gap:12px;counter-reset:drs}
+  .dr-steps li{counter-increment:drs;position:relative;padding-left:40px;font-size:.93rem;color:var(--ink-soft);line-height:1.55}
+  .dr-steps li::before{content:counter(drs,decimal-leading-zero);position:absolute;left:0;top:.1em;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--gold-deep);border:1px solid rgba(196,154,60,.5);border-radius:999px;padding:3px 6px;line-height:1}
+  .dr-steps li b{color:var(--navy);font-weight:600}
+  .card.dr-credit{margin-top:20px;padding:26px 30px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;background:var(--navy);color:var(--on-dark)}
+  .dr-credit .code{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--gold-soft)}
+  .dr-credit p{font-size:.95rem;color:var(--on-dark-soft);line-height:1.65}
+  .dr-credit p b{color:#fff;font-weight:600}
 
   /* ---------- Nav ---------- */
   header.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(12,20,36,.06)}
@@ -261,7 +292,9 @@
     nav.links{gap:18px}
   }
   @media (max-width:1000px){
-    .feature-card,.qoe-card,.team-card,.contact-card,.lender-grid,.ind-card{grid-template-columns:1fr;gap:34px}
+    .feature-card,.qoe-card,.team-card,.contact-card,.lender-grid,.ind-card,.dr-detail{grid-template-columns:1fr;gap:34px}
+    .dr-grid{grid-template-columns:1fr}
+    .card.dr-credit{grid-template-columns:1fr;gap:12px}
     .stats{grid-template-columns:repeat(2,1fr)}
     .stat:nth-child(2){border-right:none}
     .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
@@ -286,7 +319,9 @@
     .stats{grid-template-columns:1fr}
     .stat{border-right:none!important;border-bottom:1px solid var(--line)}
     .stat:last-child{border-bottom:none}
-    .feature-card,.qoe-card,.team-card,.contact-card,.fee-card,.sop-card,.ind-card{padding:28px 22px}
+    .feature-card,.qoe-card,.team-card,.contact-card,.fee-card,.sop-card,.ind-card,.dr-card{padding:28px 22px}
+    .plan{padding:26px 22px}
+    .dr-credit{padding:24px 22px}
     .form-card{padding:22px 18px}
     .foot-grid{grid-template-columns:1fr}
     .faq-item{padding:0 16px}
@@ -303,6 +338,7 @@
     <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
     <nav class="links" id="navLinks">
       <a href="#services">Services</a>
+      <a href="#deal-review">Deal Review</a>
       <a href="#qoe">Quality of Earnings</a>
       <a href="#lenders">For Lenders</a>
       <a href="#who">Who We Serve</a>
@@ -453,6 +489,98 @@
   </div>
 </section>
 
+<section id="deal-review" class="tinted">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="chip">Deal Review, for buyers still searching</span>
+      <h2>Two deal reviews and an hour with an advisor, for $199.</h2>
+      <p>Most buyers read twenty or more CIMs before one deserves an offer. Send us the ones you are weighing. For each, you get a written memo with a verdict, the red flags, an SBA financing fit check and the questions to send back to the broker, then time with an advisor to talk through them or anything else on your search.</p>
+    </div>
+    <div class="dr-grid">
+      <article class="card plan rv">
+        <span class="code">DEAL REVIEW</span>
+        <h3>Two deals, one hour</h3>
+        <div class="price"><b>$199</b><span>one-time</span></div>
+        <p class="sub">For a buyer with one or two listings on the desk right now.</p>
+        <ul class="checks">
+          <li>2 deal reviews, each a written memo in 2 business days</li>
+          <li>SBA financing fit check on each deal</li>
+          <li>1 hour with an advisor, in one or two calls</li>
+          <li>Use within 60 days</li>
+        </ul>
+        <div class="plan-cta">
+          <!-- TODO: replace href with the Stripe or Square checkout link once it exists -->
+          <a href="#contact" class="btn btn-primary" data-service="Deal Review package">Start a Deal Review</a>
+          <small>Prepaid by card. Until online checkout is live, request below and we email a payment link the same day.</small>
+        </div>
+      </article>
+      <article class="card plan featured rv d1">
+        <span class="badge">Save $100</span>
+        <span class="code">DEAL REVIEW x2</span>
+        <h3>Four deals, two hours</h3>
+        <div class="price"><b>$298</b><span>one-time, $149 per hour</span></div>
+        <p class="sub">For a buyer comparing several targets or circling back to one twice.</p>
+        <ul class="checks">
+          <li>4 deal reviews, each a written memo in 2 business days</li>
+          <li>SBA financing fit check on each deal</li>
+          <li>2 hours with an advisor, split as you like</li>
+          <li>Use within 90 days</li>
+        </ul>
+        <div class="plan-cta">
+          <!-- TODO: replace href with the Stripe or Square checkout link once it exists -->
+          <a href="#contact" class="btn btn-primary" data-service="Deal Review package">Start with Four Reviews</a>
+          <small>Prepaid by card. Until online checkout is live, request below and we email a payment link the same day.</small>
+        </div>
+      </article>
+      <article class="card plan rv d2">
+        <span class="code">ACTIVE SEARCH</span>
+        <h3>Six deals a month, two hours</h3>
+        <div class="price"><b>$399</b><span>per month, cancel anytime</span></div>
+        <p class="sub">For searchers and search funds reviewing deal flow every week.</p>
+        <ul class="checks">
+          <li>Up to 6 deal reviews per month, next business day</li>
+          <li>SBA financing fit check on each deal</li>
+          <li>2 hours with an advisor each month</li>
+          <li>Unused reviews do not roll over</li>
+        </ul>
+        <div class="plan-cta">
+          <a href="#contact" class="btn btn-soft" data-service="Deal Review package">Ask about Active Search</a>
+          <small>Monthly billing starts after a short call to confirm your search criteria.</small>
+        </div>
+      </article>
+    </div>
+    <div class="dr-detail">
+      <div class="card dr-card rv">
+        <div class="code">EVERY REVIEW INCLUDES</div>
+        <h3>A two-page memo you can forward to your partner or your banker.</h3>
+        <ul class="checks">
+          <li><strong>Verdict:</strong> pursue, pass, or pursue at a stated price range, with the reasons in plain language</li>
+          <li><strong>Red flags:</strong> customer concentration, owner dependence, add-backs that will not survive diligence, lease and licensing issues, anything that should move the price</li>
+          <li><strong>SBA financing fit:</strong> eligibility, purchase price against the SOP thresholds, equity injection and seller-note structure, and debt-service coverage on each historical year the way a lender runs it</li>
+          <li><strong>Broker questions:</strong> the five to ten questions to send back before you spend another hour on the deal</li>
+          <li><strong>Where it fits:</strong> if the deal is worth pursuing, the next step we would take and what it would cost</li>
+        </ul>
+        <p style="margin-top:16px"><b>Not a loan approval.</b> Kerdai is not a lender. The financing fit check tells you whether a deal is likely to clear an SBA credit desk and what would need to change if not. When it fits, we introduce you to a lender in our network for a real pre-qualification.</p>
+      </div>
+      <div class="card dr-card rv d1">
+        <div class="code">HOW IT WORKS</div>
+        <h3>Pay once, send the CIM, get the memo.</h3>
+        <ol class="dr-steps">
+          <li><b>Pick a package</b> and prepay by card. We confirm by email within one business day.</li>
+          <li><b>Send the deal.</b> Upload the CIM or broker summary, and tax returns if you have them, through the secure link in your confirmation email. No NDA problem: we sign the broker's NDA when asked.</li>
+          <li><b>Read the memo</b> in two business days, next business day on the Active Search plan.</li>
+          <li><b>Book your time</b> with an advisor from the calendar link, in 30 or 60 minute blocks, for the deals reviewed or anything else on your search.</li>
+        </ol>
+        <p style="margin-top:16px"><b>Independence.</b> Kerdai's principals also own IC-USA, a business brokerage. We decline to review any business listed by IC-USA or its agents, and we tell you before you pay if a deal you send is one of them.</p>
+      </div>
+    </div>
+    <div class="card dr-credit rv">
+      <span class="code">FEE CREDIT</span>
+      <p><b>Every dollar you pay for deal reviews comes back when the search ends.</b> Deal Review fees paid in the 90 days before you engage Kerdai are credited in full against a Business Assessment, a business valuation or a Quality of Earnings report on any deal, not only the ones we reviewed.</p>
+    </div>
+  </div>
+</section>
+
 <section id="lenders">
   <div class="wrap">
     <div class="section-head rv">
@@ -587,6 +715,9 @@
       <div class="card faq-item"><button class="faq-q" aria-expanded="false">How should I choose a QofE provider?<span class="pm">+</span></button><div class="faq-a"><p>Ask three questions. How many QofE engagements did you complete in the last year? Who does the fieldwork, and is it the person who signs the report? Can I see a redacted sample report? Then compare scope letters side by side rather than headline fees. A CPA license is required for an audit, not for a QofE; transaction experience matters more than the letters. Our answers: the person who signs does the fieldwork, a redacted sample is available on request, our fee is fixed and never contingent on closing, and we never keep the books of a business we test.</p></div></div>
       <div class="card faq-item"><button class="faq-q" aria-expanded="false">The seller runs several businesses through one entity. Can you still do a QofE?<span class="pm">+</span></button><div class="faq-a"><p>Yes. This is a carve-out: we separate the revenue, costs and working capital of the business you are buying from everything else in the entity, working from the general ledger and bank activity rather than the seller's summary. SBA lenders typically want carve-out financial statements supported by an accountant's letter; we prepare the carve-out and coordinate that letter with the seller's CPA, since Kerdai is not a licensed CPA firm. Expect more time and a separate quote. Who pays for it is a negotiation, and sellers rarely volunteer, so raise it in the LOI.</p></div></div>
       <div class="card faq-item"><button class="faq-q" aria-expanded="false">What happens when your number comes in below the seller's?<span class="pm">+</span></button><div class="faq-a"><p>It usually does; the question is by how much. A gap of a few percent rarely changes the deal. Ten to twenty percent is a conversation about price or structure: a seller note, a holdback or an earnout tied to the accounts at risk. A much larger or unexplained gap is a reason to walk, because if the earnings are that far off, so is everything else. Occasionally the tested number is higher than the seller's, and that stays in your pocket. One more thing we check before the bank does: lenders run debt-service coverage on each historical year, not just the trailing twelve months, so a fast-growing business priced on this year's earnings can fail underwriting on last year's.</p></div></div>
+      <div class="card faq-item"><button class="faq-q" aria-expanded="false">What is a deal review, and how is it different from a business assessment?<span class="pm">+</span></button><div class="faq-a"><p>A deal review works from what the seller has already published: the CIM or broker summary, the financial recap and, if you have them, tax returns. In two business days you get a two-page memo with a verdict, the red flags, an SBA financing fit check and the questions to send back to the broker. It is built for the search stage, when you are deciding which of several listings deserves your attention, and it is priced so you can run it on every serious one. A business assessment goes deeper on a single target: we interview the owner, work from the actual financial statements and give you an indicative value range before you make an offer. Deal review fees are credited against an assessment, so nothing is lost by starting small.</p></div></div>
+      <div class="card faq-item"><button class="faq-q" aria-expanded="false">Is the SBA financing fit check a lender pre-approval?<span class="pm">+</span></button><div class="faq-a"><p>No. Only a lender can pre-qualify or approve a loan, and Kerdai is not a lender. The fit check applies the tests an SBA credit desk will apply: program eligibility, the purchase price against the SOP thresholds for a valuation and a Quality of Earnings report, the equity injection and seller-note structure, and debt-service coverage on each historical year, not just the trailing twelve months. It tells you whether the deal is likely to finance as presented and what would need to change if not. When a deal fits, we introduce you to a lender in our network who can run a real pre-qualification, usually within a few days.</p></div></div>
+      <div class="card faq-item"><button class="faq-q" aria-expanded="false">Can I send any listing for a deal review?<span class="pm">+</span></button><div class="faq-a"><p>Any listing from any broker, marketplace or direct outreach, with one exception. Kerdai's principals also own IC-USA, a business brokerage, and we decline to review businesses listed by IC-USA or its agents, because an opinion on a deal where we are paid by the seller is not independent. If a deal you send turns out to be one of them, we tell you before any work starts and your review is not used up. On every other deal we sign the broker's NDA when asked, we are paid only by you, and our fee never depends on whether you buy.</p></div></div>
     </div>
   </div>
 </section>
@@ -618,6 +749,7 @@
                 <option value="">Select one</option>
                 <option>Business valuation</option>
                 <option>Quality of Earnings report</option>
+                <option>Deal Review package</option>
                 <option>Business assessment</option>
                 <option>Due diligence</option>
                 <option>Buy-side representation</option>
@@ -671,6 +803,7 @@
         <h4>Services</h4>
         <a href="#services">Business Valuation</a>
         <a href="#qoe">Quality of Earnings</a>
+        <a href="#deal-review">Deal Review</a>
         <a href="#services">Business Assessment</a>
         <a href="#services">Due Diligence</a>
         <a href="#services">Buy-Side Representation</a>
