@@ -103,6 +103,33 @@
   .tr-note h3{font-size:1.3rem;line-height:1.25}
   .tr-note .fn{font-size:.82rem;color:var(--ink-mute);margin-top:14px;line-height:1.55}
 
+  /* ---------- Listings (Kerdai sell-side mandates, public on BizBuySell) ---------- */
+  .lst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+  .lst{padding:30px 28px;display:flex;flex-direction:column;gap:12px;transition:transform .35s ease,box-shadow .35s ease}
+  .lst:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+  .lst-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .lst-top .code{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--gold-deep)}
+  .lst-top .status{font-size:.72rem;font-weight:600;letter-spacing:.04em;color:var(--navy);background:rgba(196,154,60,.16);border:1px solid rgba(196,154,60,.5);padding:4px 10px;border-radius:999px;white-space:nowrap}
+  .lst h3{font-size:1.2rem;line-height:1.25}
+  .lst .loc{font-size:.84rem;font-weight:500;color:var(--ink-mute);margin-top:-4px}
+  .lst .teaser{font-size:.92rem;color:var(--ink-soft);line-height:1.62}
+  .lst-figs{list-style:none;margin-top:4px;border-top:1px solid var(--line)}
+  .lst-figs li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.86rem;color:var(--ink-mute)}
+  .lst-figs li b{font-family:var(--mono);font-size:.95rem;font-weight:500;color:var(--navy);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .lst-figs li.ask b{font-size:1.15rem;font-weight:600}
+  .lst-tags{display:flex;flex-wrap:wrap;gap:6px}
+  .lst-tags span{font-size:.74rem;font-weight:500;color:var(--ink-mute);background:var(--bg-2);border:1px solid var(--line);padding:4px 10px;border-radius:999px}
+  .lst-cta{margin-top:auto;padding-top:16px;display:grid;gap:10px}
+  .lst-cta .btn{width:100%}
+  .lst-cta small{font-size:.76rem;color:var(--ink-mute);line-height:1.45;text-align:center}
+  .card.lst-note{margin-top:20px;padding:30px 36px;display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:start}
+  .lst-note .code{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--gold-deep);margin-bottom:8px}
+  .lst-note h3{font-size:1.25rem;line-height:1.25}
+  .lst-note p{font-size:.95rem;color:var(--ink-soft);line-height:1.68;margin-bottom:12px}
+  .lst-note p:last-child{margin-bottom:0}
+  .lst-note p b{color:var(--navy);font-weight:600}
+  .lst-note p a{color:var(--navy)}
+
   /* ---------- Nav ---------- */
   header.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(12,20,36,.06)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;height:68px;position:relative}
@@ -307,6 +334,8 @@
     .dr-grid{grid-template-columns:1fr}
     .tr-grid{grid-template-columns:repeat(2,1fr)}
     .card.tr-note{grid-template-columns:1fr;gap:20px}
+    .lst-grid{grid-template-columns:1fr}
+    .card.lst-note{grid-template-columns:1fr;gap:20px}
     .card.dr-credit{grid-template-columns:1fr;gap:12px}
     .stats{grid-template-columns:repeat(2,1fr)}
     .stat:nth-child(2){border-right:none}
@@ -336,10 +365,28 @@
     .plan{padding:26px 22px}
     .tr-grid{grid-template-columns:1fr}
     .card.tr-note{padding:28px 22px}
+    .lst{padding:26px 22px}
+    .card.lst-note{padding:28px 22px}
     .dr-credit{padding:24px 22px}
     .form-card{padding:22px 18px}
     .foot-grid{grid-template-columns:1fr}
     .faq-item{padding:0 16px}
+  }
+
+  /* ---------- Nav fit (Oct 16 2026, with the Listings item) ----------
+     The bar had grown wider than the 1120px wrap, which shrank the logo to zero width on desktop.
+     Keep the logo at full width, tighten the links, keep the phone in the drawer only, and open the drawer at 1180px (same as the IC-USA site). */
+  .brand{flex:0 0 auto}
+  nav.links{gap:16px}
+  nav.links a{font-size:.84rem}
+  nav.links a.nav-phone{display:none}
+  @media (max-width:1180px){
+    nav.links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:8px 24px 18px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+    nav.links.open{display:flex}
+    nav.links a{padding:12px 0;width:100%;border-bottom:1px solid var(--line);font-size:.92rem}
+    nav.links a.nav-phone{display:block}
+    nav.links a.btn{margin-top:12px;width:auto;border-bottom:none;font-size:.86rem}
+    .menu-toggle{display:flex}
   }
 </style>
 </head>
@@ -359,6 +406,7 @@
       <a href="#lenders">For Lenders</a>
       <a href="#who">Who We Serve</a>
       <a href="#track-record">Why Kerdai</a>
+      <a href="#listings">Listings</a>
       <a href="#team">The Team</a>
       <a href="#faq">FAQ</a>
       <a href="tel:+13055010224" class="nav-phone">305-501-0224</a>
@@ -728,6 +776,85 @@
   </div>
 </section>
 
+<section id="listings" class="tinted">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="chip">Listings</span>
+      <h2>Businesses Kerdai is bringing to market.</h2>
+      <p>A small number of owners each year retain Kerdai to sell their companies. Each listing below is public on BizBuySell under the Kerdai broker profile. The teaser is what is public; the CIM, the financials and the data room follow a signed NDA and buyer qualification.</p>
+    </div>
+    <div class="lst-grid">
+      <article class="card lst rv">
+        <div class="lst-top"><span class="code">LISTING 01</span><span class="status">On Market</span></div>
+        <h3>Profitable Home Services Lead-Gen Platform, SBA Pre-Qualified</h3>
+        <div class="loc">Florida, relocatable. Fully remote.</div>
+        <p class="teaser">Fast-growing lead generation platform serving home services contractors, roofing, HVAC, plumbing and electrical, across 40+ states. Exclusive, prepaid leads sold pay-per-lead, with no retainers and no long-term contracts, so there are no receivables, no inventory and no real capex. SDE is stated after a market-rate manager; the owner is on it 10 to 15 hours a week. An SBA 7(a) loan is already structured through a national lender, with a seller note in place: $300,000 at closing for a qualified buyer.</p>
+        <ul class="lst-figs">
+          <li class="ask"><span>Asking price</span><b>$2,500,000</b></li>
+          <li><span>Cash flow (SDE), TTM</span><b>$956,369</b></li>
+          <li><span>Adjusted EBITDA, TTM</span><b>$846,369</b></li>
+          <li><span>Revenue, TTM</span><b>$1,848,399</b></li>
+          <li><span>Established</span><b>2023</b></li>
+        </ul>
+        <div class="lst-tags"><span>SBA loan eligible</span><span>Seller financing</span><span>Home-based</span></div>
+        <div class="lst-cta">
+          <a href="https://www.bizbuysell.com/business-opportunity/profitable-home-services-lead-gen-platform-sba-pre-qualified/2556347/" class="btn btn-primary" target="_blank" rel="noopener">View on BizBuySell</a>
+          <a href="#contact" class="btn btn-soft" data-listing="Home Services Lead-Gen Platform, Florida (BizBuySell Ad# 2556347)">Ask about this listing</a>
+          <small>BizBuySell Ad# 2556347</small>
+        </div>
+      </article>
+      <article class="card lst rv d1">
+        <div class="lst-top"><span class="code">LISTING 02</span><span class="status">On Market</span></div>
+        <h3>Established Gastroenterology Practice and ASC, Real Estate Included</h3>
+        <div class="loc">East Texas. Location disclosed to qualified buyers.</div>
+        <p class="teaser">Established gastroenterology practice (1992), its co-located Medicare-certified ambulatory surgery center (2006) and the purpose-built building that houses both, offered together. Everything conveys debt-free: no notes, no equipment leases, no lines of credit, and the real estate owned free and clear for more than twenty years. The only ASC-based GI provider for a wide, multi-county catchment, with a regional hospital in immediate proximity. An SBA 7(a) plus conventional structure has been reviewed by a national lender, with a pre-approval letter on file; a minimum of $1 million of liquidity is expected, and physician or MSO ownership structures are both open.</p>
+        <ul class="lst-figs">
+          <li class="ask"><span>Asking price</span><b>$10,000,000</b></li>
+          <li><span>Cash flow (SDE)</span><b>$2,700,000</b></li>
+          <li><span>EBITDA</span><b>$2,350,000</b></li>
+          <li><span>Revenue</span><b>$4,600,000</b></li>
+          <li><span>Real estate included</span><b>$1,500,000</b></li>
+          <li><span>Established</span><b>1992</b></li>
+        </ul>
+        <div class="lst-tags"><span>SBA loan eligible</span><span>Seller financing</span><span>Real estate included</span></div>
+        <div class="lst-cta">
+          <a href="https://www.bizbuysell.com/business-opportunity/established-gastroenterology-practice-and-asc-east-texas-cre-included/2548480/" class="btn btn-primary" target="_blank" rel="noopener">View on BizBuySell</a>
+          <a href="#contact" class="btn btn-soft" data-listing="Gastroenterology Practice and ASC, East Texas (BizBuySell Ad# 2548480)">Ask about this listing</a>
+          <small>BizBuySell Ad# 2548480</small>
+        </div>
+      </article>
+      <article class="card lst rv d2">
+        <div class="lst-top"><span class="code">LISTING 03</span><span class="status">On Market</span></div>
+        <h3>Miami Beach Convenience Store: Beer, Wine, Tobacco and Vape, Parking, 5-Year Lease</h3>
+        <div class="loc">Miami Beach, Florida (Miami-Dade County).</div>
+        <p class="teaser">Established, fully licensed and fully stocked neighborhood convenience store, offered as an asset sale with a five-year lease term and dedicated on-site parking. Entitlements cover retail tobacco, vape and CBD, off-premises package beer and wine, lottery and an ATM, in a city that has moved to prohibit new tobacco and vape retailers in parts of town. Run absentee today with counter staff; roughly $40,000 of inventory at cost is included in the price. Cash at closing preferred, with a modest short-term seller note possible for a qualified buyer.</p>
+        <ul class="lst-figs">
+          <li class="ask"><span>Asking price</span><b>$390,000</b></li>
+          <li><span>Structure</span><b>Asset sale</b></li>
+          <li><span>Lease term</span><b>5 years</b></li>
+          <li><span>Established</span><b>2016</b></li>
+        </ul>
+        <div class="lst-tags"><span>Licensed and entitled</span><span>On-site parking</span><span>Absentee-run</span></div>
+        <div class="lst-cta">
+          <a href="https://www.bizbuysell.com/business-asset/miami-beach-c-store-beer-wine-tobacco-and-vape-parking-5-yr-lease/2558530/" class="btn btn-primary" target="_blank" rel="noopener">View on BizBuySell</a>
+          <a href="#contact" class="btn btn-soft" data-listing="Miami Beach Convenience Store (BizBuySell Ad# 2558530)">Ask about this listing</a>
+          <small>BizBuySell Ad# 2558530</small>
+        </div>
+      </article>
+    </div>
+    <div class="card lst-note rv">
+      <div>
+        <div class="code">A NOTE ON INDEPENDENCE</div>
+        <h3>On these businesses, Kerdai represents the seller.</h3>
+      </div>
+      <div>
+        <p><b>Bring your own advisor.</b> We do not provide deal reviews, valuations, Quality of Earnings reports or due diligence to a buyer on a business we are selling, because an opinion paid for by the seller is not independent. On these listings we will tell you that before any work starts, and we welcome your advisor, lender and attorney into the process.</p>
+        <p><b>How to inquire.</b> Use the BizBuySell link or the contact form on this page. After a signed NDA and buyer qualification (a short biography, a personal financial statement with proof of funds, and a lender pre-qualification or funding letter) you receive the CIM, and a written non-binding indication of interest opens the data room and access to management. Please do not contact the business, its staff, landlord or suppliers directly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="process">
   <div class="wrap">
     <div class="section-head rv">
@@ -995,6 +1122,8 @@
 <script>
   // Lender CTA: preselect the service when arriving at the form from the For Lenders section.
   document.querySelectorAll('[data-service]').forEach(function(a){a.addEventListener('click',function(){var sel=document.getElementById('service');if(sel){sel.value=a.getAttribute('data-service');}});});
+  // Listings CTA: prefill the form so the inquiry names the listing (the Airtable row carries it in Industry/location and the message).
+  document.querySelectorAll('[data-listing]').forEach(function(a){a.addEventListener('click',function(){var l=a.getAttribute('data-listing'),ind=document.getElementById('industry'),m=document.getElementById('message'),st=document.getElementById('stage');if(ind){ind.value='Listing inquiry: '+l;}if(m&&!m.value){m.value='I would like to receive the NDA and buyer qualification for this listing: '+l+'.';}if(st){st.value='Still evaluating the target';}});});
 </script>
 </body>
 </html>
