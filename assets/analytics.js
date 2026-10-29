@@ -3,7 +3,7 @@
    ga4:      Google Analytics > Admin > Data streams > Web > Measurement ID, looks like "G-XXXXXXXXXX"
    linkedin: Campaign Manager > Analyze > Insight Tag > Partner ID, a number as a string, e.g. "1234567"
    linkedinConversionId: optional, a LinkedIn conversion rule ID fired on form_submit, e.g. "12345678" */
-window.KBA_ANALYTICS = { ga4: "", linkedin: "", linkedinConversionId: "" };
+window.KBA_ANALYTICS = { ga4: "G-Q2ML23NM2K", linkedin: "9992202", linkedinConversionId: "" };
 (function (c) {
   function load(src){ var s = document.createElement('script'); s.async = true; s.src = src; document.head.appendChild(s); }
   if (c.ga4) {
