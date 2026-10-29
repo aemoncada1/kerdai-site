@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /lender/
+
+Sitemap: https://www.kerdaibusinessadvisors.com/sitemap.xml
