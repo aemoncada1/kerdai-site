@@ -77,6 +77,27 @@
   .foot{border-top:1px solid var(--line);padding:9px .6in 0;height:.52in;display:flex;justify-content:space-between;align-items:center;font-size:8pt;color:var(--ink-mute);font-family:var(--mono)}
   .foot b{color:var(--navy);font-weight:500}
 
+  /* page 1 fit */
+  .p1 .band{padding:.26in .6in .24in}
+  .p1 .body{padding:.2in .6in .12in}
+  .p1 h1{font-size:19.5pt;margin:8px 0 6px}
+  .p1 .lede{font-size:9.4pt;line-height:1.5;max-width:7.1in}
+  .p1 .cols{margin-top:.13in;gap:.14in;grid-template-columns:1fr 1fr 1.3fr}
+  .p1 .col{padding:11px 13px 10px}
+  .p1 .col h2{font-size:11.6pt;margin:3px 0 7px}
+  .p1 .checks li,.p1 .steps li{font-size:8.5pt;margin-bottom:4px;line-height:1.36}
+  .p1 .fee-row .k{font-size:8.6pt}
+  .p1 .fee-row .k b{font-size:9pt}
+  .p1 .fee-row .v{font-size:11pt}
+  .p1 .fee{gap:4px}
+  .p1 .fee-row{padding-top:4px}
+  .p1 .fee-row .k{line-height:1.25}
+  .p1 .fee-note{font-size:7.2pt;margin-top:6px;padding-top:6px;line-height:1.38}
+  .p1 .rule-strip{padding-top:.09in}
+  .p1 .rule p{font-size:8.2pt}
+  .p1 .rule .cta{padding:10px 13px;font-size:8.4pt;line-height:1.4}
+  .p1 .foot{height:.44in;padding-top:7px;font-size:7.6pt}
+
   /* page 2 */
   .p2 .body{padding-top:.18in;padding-bottom:.16in}
   .p2 .grid2{gap:.14in;margin-top:.14in}
@@ -157,9 +178,9 @@
         <div class="code">01 / What you get</div>
         <h2>The report your credit file needs</h2>
         <ul class="checks">
-          <li><b>Proof of cash</b>, trailing twelve months plus two fiscal years, reconciled to bank and merchant deposits</li>
-          <li><b>Add-back schedule</b> with every adjustment tied to a source document</li>
-          <li><b>Book-to-tax reconciliation</b> of the financial statements to filed returns</li>
+          <li><b>Proof of cash</b>, month by month over three years plus the trailing twelve months, reconciled to bank and merchant deposits</li>
+          <li><b>Add-back schedule</b>, each adjustment tested against a source document, a non-recurrence narrative and a benchmark; undocumented add-backs modeled at zero</li>
+          <li><b>Book-to-tax and IRS transcript reconciliation</b> of the P&amp;L to the filed returns and to IRS account transcripts</li>
           <li><b>Customer concentration</b> and revenue durability</li>
           <li><b>DSC-ready adjusted earnings</b>, so the number drops straight into your debt-service coverage calculation</li>
           <li>Net working capital trend and findings in plain credit language</li>
@@ -185,12 +206,12 @@
           <div class="fee-row"><div class="k"><b>QofE, up to $5M</b>10 business days</div><div class="v">$9,500</div></div>
           <div class="fee-row"><div class="k"><b>QofE, $5M to $10M</b>10 business days</div><div class="v">$14,500</div></div>
           <div class="fee-row"><div class="k"><b>QofE rush</b>7 business days</div><div class="v">+$2,500</div></div>
-          <div class="fee-row"><div class="k"><b>QofE above $10M</b>or multi-entity, 48 hours</div><div class="v">Quoted</div></div>
-          <div class="fee-row"><div class="k"><b>DSC Verification</b>sub-$3M files, 7 business days</div><div class="v">$4,500</div></div>
+          <div class="fee-row"><div class="k"><b>QofE above $10M</b>or multi-entity, 48-hour quote</div><div class="v">Quoted</div></div>
+          <div class="fee-row"><div class="k"><b>DSC Verification</b>sub-$3M files, 7 days</div><div class="v">$4,500</div></div>
           <div class="fee-row"><div class="k"><b>Review letter</b>buyer-ordered QofE, 5 days</div><div class="v">$2,500</div></div>
-          <div class="fee-row"><div class="k"><b>SBA valuation</b>change of ownership, Qualified Source (CVA, NACVA), 7 days</div><div class="v">$3,500</div></div>
+          <div class="fee-row"><div class="k"><b>SBA valuation (CVA, NACVA)</b>change of ownership, 7 days</div><div class="v">$3,500</div></div>
         </div>
-        <div class="fee-note">Purchase price measured before equity injection and seller notes, as the SOP measures it. Days count from a complete document set. Fees cover the deliverable, the findings call and underwriter questions through closing. Travel, if any, at cost.</div>
+        <div class="fee-note">Purchase price measured before equity injection and seller notes, as the SOP measures it. Days count from a complete document set. Fees cover the deliverable, the findings call and underwriter questions through closing. Carve-outs (one business operated inside a multi-business entity) and multi-location targets are quoted separately, because each set of books is tested on its own. Travel, if any, at cost.</div>
       </div>
     </div>
 
@@ -198,12 +219,12 @@
       <div class="rule">
         <div>
           <h3>Which product for which file</h3>
-          <p><b>$3M and up:</b> the SOP requires a lender-commissioned QofE, and a report prepared by or for the borrower or seller does not count. <b>Under $3M:</b> DSC Verification, a two-page memo to the bank with the cash proof (TTM plus last fiscal year), add-back check against source documents, book-to-tax reconciliation and adjusted earnings for the DSC calculation. <b>Buyer already ordered a QofE:</b> we review it and issue a lender reliance letter, per SBA's August 2026 training.</p>
+          <p><b>$3M and up:</b> the SOP requires a lender-commissioned QofE, and a report prepared by or for the borrower or seller does not count. <b>Under $3M:</b> DSC Verification, a two-page memo to the bank with the cash proof, add-back check, book-to-tax reconciliation and adjusted earnings for the DSC. <b>Buyer already ordered a QofE:</b> we review it and issue a lender reliance letter, per SBA's August 2026 training. <b>IRS transcripts:</b> the guidance directs the preparer to reconcile reported earnings to IRS account transcripts. We obtain them under one authorization and share them with the bank, so the borrower is not asked twice.</p>
         </div>
         <div class="cta">
           <b>Request the vendor packet</b>
           <span>Engagement letter template, W-9, independence policy and methodology note. Redacted sample report available on request. Signed by Alejandra B. Barrera, Managing Partner.</span><br>
-          <span class="m">info@kerdai.com &nbsp;·&nbsp; 305-501-0224</span>
+          <span class="m">info@kerdai.com &nbsp;·&nbsp; 561-765-2303</span>
         </div>
       </div>
     </div>
@@ -211,7 +232,7 @@
 
   <footer class="foot">
     <span><b>Kerdai Business Advisors</b> &nbsp;·&nbsp; kerdaibusinessadvisors.com</span>
-    <span>Independence statement, team and sample bridge on the back &rarr;</span>
+    <span>Independence, team and sample bridge on the back &rarr;</span>
   </footer>
 </section>
 
@@ -296,7 +317,7 @@
         <div class="lead">Send us the next file.<small>Scope confirmed within one business day of the LOI and purchase price.</small></div>
       </div>
       <div><div class="k">Contact</div><div class="v">Alejandra B. Barrera<small>Managing Partner</small></div></div>
-      <div><div class="k">Phone and email</div><div class="v">305-501-0224<small>info@kerdai.com</small></div></div>
+      <div><div class="k">Phone and email</div><div class="v">561-765-2303<small>info@kerdai.com</small></div></div>
       <div><div class="k">Office</div><div class="v">5201 Blue Lagoon Dr.<small>Suite 914, Miami, FL 33126</small></div></div>
     </div>
   </div>
